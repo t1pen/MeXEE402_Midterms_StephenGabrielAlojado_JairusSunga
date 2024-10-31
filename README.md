@@ -10,9 +10,9 @@ In this project there are two dataset that will be used which are the Car Price 
 
 This project aims to predict the selling price of automobiles based on various independent variables. To assess the Customer Satisfaction Dataset to predict whether customers are satisfied or dissatisfied based on their feedback.
 
-# Overview of Linear Regression and Logistic Regression
+## Overview of Linear Regression and Logistic Regression
 
-## 1. Linear Regression
+### 1. Linear Regression
 
 <div align="justify">
 
@@ -28,9 +28,9 @@ This project aims to predict the selling price of automobiles based on various i
   y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon
   $$
   - $y$: predicted value
-  - $( x_1, x_2, \dots )$: feature variables
-  - $( \beta_0, \beta_1, \dots )$: coefficients
-  - $( \epsilon )$: error term
+  - $(x_1, x_2, \dots)$: feature variables
+  - $(\beta_0, \beta_1, \dots)$: coefficients
+  - $(\epsilon)$: error term
 
 - **Loss Function**: Mean Squared Error (MSE)
   $$
