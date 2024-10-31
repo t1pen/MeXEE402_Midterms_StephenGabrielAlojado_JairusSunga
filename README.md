@@ -13,7 +13,13 @@ This project aims to predict the selling price of automobiles based on various i
 # Overview of Linear Regression and Logistic Regression
 
 ## 1. Linear Regression
-Linear Regression is used to predict a continuous value. It finds the best-fit line through the data points to minimize prediction errors.
+
+<div align="justify">
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Linear Regression** is a **supervised learning algorithm** primarily used for predicting a **continuous dependent variable** based on one or more **independent variables**. It establishes a **linear relationship** between input features and the target output by fitting a line that minimizes **prediction errors**, capturing trends within the data. This method is especially useful in applications where **forecasting** or **trend analysis** over time is required, such as in **finance** or **real estate**.
+
+</div>
+
 
 ### Key Points
 - **Goal**: Predict a continuous target variable.
