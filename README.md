@@ -73,6 +73,11 @@ Logistic Regression is used for classification (e.g., Yes/No) by estimating the 
 
   $$-\frac{1}{N} \sum_{i=1}^N \left[y_i \log(\hat{y_i}) + (1 - y_i) \log(1 - \hat{y_i})\right]$$
 
+ Whereas,
+  - N is the total number of observations.
+  - yi​ is the actual label for observation 𝑖 (0 or 1).
+  - pi​ is the predicted probability that the observation 𝑖 belongs to class 1.
+
 ### Example
 Predicting if a patient has a disease (yes/no) based on symptoms.
 
