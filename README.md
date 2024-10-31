@@ -1,20 +1,6 @@
-<center>
-  
-# Linear Regression and Logistic Regression
-**Midterms for MexEE 402 - Electives 2** <br>
-**Prepared by: Stephen Gabriel S. Alojado and Jairus Sunga**
-
-</center>
-
-<table style="width:100%; text-align: center;">
-  <tr>
-    <td>
-      <h2>Linear Regression and Logistic Regression</h2>
-      <p><strong>Midterms for MexEE 402 - Electives 2</strong></p>
-      <p><strong>Prepared by: Stephen Gabriel S. Alojado and Jairus Sunga</strong></p>
-    </td>
-  </tr>
-</table>
+<h1 align="center">Linear Regression and Logistic Regression</h1>
+<p align="center"><b>Midterms for MexEE 402 - Electives 2
+<br> Prepared by: Stephen Gabriel S. Alojado and Jairus Sunga</b></p>
 
 ## Introduction
 
