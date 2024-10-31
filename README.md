@@ -31,9 +31,11 @@ This project aims to predict the selling price of automobiles based on various i
     - $(\epsilon)$: error term
 
 - **Loss Function**: Mean Squared Error (MSE) <br>
+ <div align="center">
 
-  $$MSE = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y_i})^2$$
+$$MSE = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y_i})^2$$
 
+</div>
 
 ### Figure
 <div align="center">
