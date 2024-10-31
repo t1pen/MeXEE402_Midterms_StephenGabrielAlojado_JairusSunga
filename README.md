@@ -1,6 +1,6 @@
 <h1 align="center">Linear Regression and Logistic Regression</h1>
 <p align="center"><b>Midterms for MexEE 402 - Electives 2
-<br> Prepared by: Stephen Gabriel S. Alojado and Jairus Sunga</b></p>
+<br> Prepared by: Stephen Gabriel S. Alojado and Jairus C. Sunga</b></p>
 
 ## Introduction
 
