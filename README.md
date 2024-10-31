@@ -18,11 +18,8 @@ This project aims to predict the selling price of automobiles based on various i
 
 ### 1. Linear Regression
 
-<div align="justify">
-
-&nbsp;&nbsp;&nbsp;&nbsp;**Linear Regression** is a **supervised learning algorithm** primarily used for predicting a **continuous dependent variable** based on one or more **independent variables**. It establishes a **linear relationship** between input features and the target output by fitting a line that minimizes **prediction errors**, capturing trends within the data. This method is especially useful in applications where **forecasting** or **trend analysis** over time is required, such as in **finance** or **real estate**.
-
-</div>
+- **Linear Regression** is a **supervised learning algorithm** primarily used for predicting a **continuous dependent variable** based on one or more **independent variables**.
+- It establishes a **linear relationship** between input features and the target output by fitting a line that minimizes **prediction errors**, capturing trends within the data.
 
 
 ### Key Points
@@ -77,9 +74,12 @@ Logistic Regression is used for classification (e.g., Yes/No) by estimating the 
 Predicting if a patient has a disease (yes/no) based on symptoms.
 
 ### Figure
-![Logistic Regression](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png)
-
-*Sigmoid curve maps probabilities between 0 and 1.*
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt="Logistic Regression">
+</p>
+<p align="center">
+  Sigmoid curve maps probabilities between 0 and 1.
+</p>
 
 ---
 
