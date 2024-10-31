@@ -24,6 +24,7 @@ This project aims to predict the selling price of automobiles based on various i
 ### Key Points
 - **Goal**: Predict a continuous target variable.
 - **Equation**:
+
 $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon$$
 
   - $y$: predicted value
