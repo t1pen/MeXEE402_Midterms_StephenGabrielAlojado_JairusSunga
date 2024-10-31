@@ -12,7 +12,7 @@ In this project there are two dataset that will be used which are the Car Price 
 
 ## Project Objectives
 
-This project aims to predict the selling price of automobiles based on various independent variables. To assess the Customer Satisfaction Dataset to predict whether customers are satisfied or dissatisfied based on their feedback.
+This project aims to predict the selling price of automobiles based on various independent variables. This would be able to analyze the model accuracy and interpret the influence the features such as mileage, model and other applicaple features. To assess the Customer Satisfaction Dataset to predict whether customers are satisfied or dissatisfied based on their feedback.
 
 ## Overview of Linear Regression and Logistic Regression
 
