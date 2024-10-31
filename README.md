@@ -23,7 +23,7 @@ This project aims to predict the selling price of automobiles based on various i
 
 ### Key Points
 - **Goal**: Predict a continuous target variable.
-- **Equation**: $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon$$
+- **Equation**: $y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon$
 
     - $y$: predicted value
     - $(x_1, x_2, \dots)$: feature variables
@@ -31,9 +31,7 @@ This project aims to predict the selling price of automobiles based on various i
     - $(\epsilon)$: error term
 
 - **Loss Function**: Mean Squared Error (MSE)
-  $$
-  MSE = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y_i})^2
-  $$
+  $$MSE = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y_i})^2$$
 
 
 ### Figure
