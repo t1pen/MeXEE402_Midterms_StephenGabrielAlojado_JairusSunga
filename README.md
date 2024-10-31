@@ -89,7 +89,10 @@ Whereas,
 
 ### 1. Car Price Prediction
 
-![Car Production Image]()
+<p align="center">
+  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/car_image.png?raw=true" alt="Car Manufacturing Plant">
+</p>
+
 
 - **Dataset Context**: This dataset was gathered by a consulting firm to assist Geely Auto, a Chinese automobile company aspiring to enter the US market. The data will help understand factors influencing car prices in America, which may differ from the Chinese market.
   
