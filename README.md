@@ -78,7 +78,17 @@ Whereas,
 
 </div>
 
-## Dataset Description
+## Project Objectives
+- This is a pair project for **MexEE 402 - Electives 2**, where we are tasked with analyzing and create a model for two datasets, one for Linear Regression and one for Logistic Regression.
+- In this project, we will be able to execute processes on creating a model for regression analysis such as **understanding the data**, **executing exploratory data analysis**, **data pre-processing**, **creating training and test sets, building a model**, and **finally assess the model through using evaluation metrics.**
+- Present the project and explain the process that was taken to build the model for regression analysis.
+- Interpret the result derived from the regression analysis. 
+
+
+## About the Dataset
+
+### 1. Car Price Prediction
+
 
 - **About the Datasets**:
   - **Linear Regression Dataset**: "Car Price Prediction" aims to predict the pricing of cars based on various attributes like make, model, mileage, etc.
@@ -86,10 +96,6 @@ Whereas,
 
 In this project there are two dataset that will be used which are the Car Price Prediction for Linear Regression and Customer Satisfaction for Logistic Regression. The Car Price Prediction Dataset contains various features related to automobiles, such as engine size, horsepower, fuel type, and other specifications that influence the selling price of a car. The Customer Satisfaction will focus on the feedback of the customers to predict if they are satisfied or dissatisfied. This includes the demographic profile of the customers and the service rating as well as the purchase frequency. This will serve as a predictor for the target variable. With that, logistic regression will be utilized to classify customers into two categories based on their satisfaction level.
 
-## Project Objectives
 
-This project aims to predict the selling price of automobiles based on various independent variables. This would be able to analyze the model accuracy and interpret the influence the features such as mileage, model and other applicaple features. To assess the Customer Satisfaction Dataset to predict whether customers are satisfied or dissatisfied based on their feedback.
-
-- This is a pair project for **MexEE 402 - Electives 2**, where we are tasked with analyzing two datasets, one for Linear Regression and one for Logistic Regression.
 
 
