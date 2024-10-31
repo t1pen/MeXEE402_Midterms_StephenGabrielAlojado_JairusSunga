@@ -35,7 +35,7 @@ $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n$$
 
 </div>
 
-- Whereas, 
+Whereas, 
   - **$y$**: predicted value  
   - **$(x_1, x_2, \dots)$**: feature variables  
   - **$(\beta_0, \beta_1, \dots)$**: coefficients
