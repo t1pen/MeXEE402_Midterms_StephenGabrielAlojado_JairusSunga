@@ -63,10 +63,10 @@ Logistic Regression is used for classification (e.g., Yes/No) by estimating the 
 - **Equation**: Uses a sigmoid function:
   $$P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \dots)}}$$
    Whereas,
-- P(Y=1∣X) is the probability that the dependent variable 𝑌 is equal to 1 given the input features 𝑋.
-- β0 is the intercept (bias term).
-- β1, β2​, ..., βn are the coefficients (weights) for the input features X1, X2, ..., Xn.
-- e is the base of the natural logarithm, approximately equal to 2.71828.
+  - P(Y=1∣X) is the probability that the dependent variable 𝑌 is equal to 1 given the input features 𝑋.
+  - β0 is the intercept (bias term).
+  - β1, β2​, ..., βn are the coefficients (weights) for the input features X1, X2, ..., Xn.
+  - e is the base of the natural logarithm, approximately equal to 2.71828.
 - **Decision Boundary**: Typically $0.5$. If probability $> 0.5$, predict 1; otherwise, $0$.
 - **Loss Function**: Log Loss (Cross-Entropy Loss)
 
