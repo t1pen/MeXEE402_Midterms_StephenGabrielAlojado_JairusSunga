@@ -59,7 +59,7 @@ $$MSE = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y_i})^2$$
 Logistic Regression is used for classification (e.g., Yes/No) by estimating the probability of an outcome. This is also primarily used binary calsssification problem, which is the goal is to predict if the input belongs to specific classes. Logistic Regrerssion uses sigmoid function to model the relationship between the inputs and binary outcome.
 
 ### Key Points
-- **Goal**: Classify data into categories.
+- **Goal**: Classify data into categories like satisfied and not satisfied based on the given factor on dataset.
 - **Equation**: Uses a sigmoid function:
   $$P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \dots)}}$$
 - **Decision Boundary**: Typically $0.5$. If probability $> 0.5$, predict 1; otherwise, $0$.
