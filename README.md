@@ -41,11 +41,6 @@ Whereas,
   - **$(\beta_0, \beta_1, \dots)$**: coefficients
 
 - **Loss Function**: Mean Squared Error (MSE) <br>
- <div align="center">
-
-$$MSE = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y_i})^2$$
-
-</div>
 
 ### Figure
 <div align="center">
