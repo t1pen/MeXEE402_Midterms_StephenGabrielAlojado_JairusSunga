@@ -23,12 +23,18 @@ This project aims to predict the selling price of automobiles based on various i
 
 ### Key Points
 - **Goal**: Predict a continuous target variable.
-- **Equation**: $y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon$
+- **Equation**: 
 
-    - $y$: predicted value
-    - $(x_1, x_2, \dots)$: feature variables
-    - $(\beta_0, \beta_1, \dots)$: coefficients
-    - $(\epsilon)$: error term
+<div align="center">
+
+$$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n$$
+
+</div>
+
+- Whereas, 
+  - **$y$**: predicted value  
+  - **$(x_1, x_2, \dots)$**: feature variables  
+  - **$(\beta_0, \beta_1, \dots)$**: coefficients
 
 - **Loss Function**: Mean Squared Error (MSE) <br>
  <div align="center">
@@ -51,14 +57,11 @@ Logistic Regression is used for classification (e.g., Yes/No) by estimating the 
 ### Key Points
 - **Goal**: Classify data into categories.
 - **Equation**: Uses a sigmoid function:
-  $$
-  P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \dots)}}
-  $$
+  $$P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \dots)}}$$
 - **Decision Boundary**: Typically $0.5$. If probability $> 0.5$, predict 1; otherwise, $0$.
 - **Loss Function**: Log Loss (Cross-Entropy Loss)
-  $$
-  -\frac{1}{N} \sum_{i=1}^N \left[y_i \log(\hat{y_i}) + (1 - y_i) \log(1 - \hat{y_i})\right]
-  $$
+
+  $$-\frac{1}{N} \sum_{i=1}^N \left[y_i \log(\hat{y_i}) + (1 - y_i) \log(1 - \hat{y_i})\right]$$
 
 ### Example
 Predicting if a patient has a disease (yes/no) based on symptoms.
