@@ -27,10 +27,10 @@ This project aims to predict the selling price of automobiles based on various i
 
 $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon$$
 
-  - $y$: predicted value
-  - $(x_1, x_2, \dots)$: feature variables
-  - $(\beta_0, \beta_1, \dots)$: coefficients
-  - $(\epsilon)$: error term
+    - $y$: predicted value
+    - $(x_1, x_2, \dots)$: feature variables
+    - $(\beta_0, \beta_1, \dots)$: coefficients
+    - $(\epsilon)$: error term
 
 - **Loss Function**: Mean Squared Error (MSE)
   $$
