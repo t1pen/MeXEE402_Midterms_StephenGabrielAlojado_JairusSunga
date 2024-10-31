@@ -1,4 +1,8 @@
-# MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga
+<div style="text-align: center;">
+  <h1>Linear Regression and Logistic Regression</h1>
+  <h3 style="margin-top: 10px; margin-bottom: 5px;">Midterms for MexEE 402 - Electives 2</h3>
+  <h4 style="margin-top: 5px; margin-bottom: 5px;">Prepared by: Stephen Gabriel S. Alojado and Jairus Sunga</h4>
+</div>
 
 ## Introduction
 
@@ -47,11 +51,11 @@ Logistic Regression is used for classification (e.g., Yes/No) by estimating the 
   $$
   P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \dots)}}
   $$
-- **Decision Boundary**: Typically 0.5. If probability > 0.5, predict 1; otherwise, 0.
+- **Decision Boundary**: Typically $0.5$. If probability $> 0.5$, predict 1; otherwise, $0$.
 - **Loss Function**: Log Loss (Cross-Entropy Loss)
-  \[
+  $$
   -\frac{1}{N} \sum_{i=1}^N \left[y_i \log(\hat{y_i}) + (1 - y_i) \log(1 - \hat{y_i})\right]
-  \]
+  $$
 
 ### Example
 Predicting if a patient has a disease (yes/no) based on symptoms.
