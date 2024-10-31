@@ -10,6 +10,8 @@ In Machine Learning, regression analysis is the statistical tool that is used to
 
 In this project there are two dataset that will be used which are the Car Price Prediction for Linear Regression and Customer Satisfaction for Logistic Regression. The Car Price Prediction Dataset contains various features related to automobiles, such as engine size, horsepower, fuel type, and other specifications that influence the selling price of a car. The Customer Satisfaction will focus on the feedback of the customers to predict if they are satisfied or dissatisfied. This includes the demographic profile of the customers and the service rating as well as the purchase frequency. This will serve as a predictor for the target variable. With that, logistic regression will be utilized to classify customers into two categories based on their satisfaction level.
 
+## Project Objectives
+
 This project aims to predict the selling price of automobiles based on various independent variables. To assess the Customer Satisfaction Dataset to predict whether customers are satisfied or dissatisfied based on their feedback.
 
 ## Overview of Linear Regression and Logistic Regression
