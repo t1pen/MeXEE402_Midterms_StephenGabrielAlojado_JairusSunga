@@ -450,8 +450,12 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
 - In this section, we will convert categorical data to numerical formats using One-Hot Encoding and Label Encoding. Additionally, we will drop unnecessary features based on the insights derived from the Exploratory Data Analysis (EDA).
 
   - By using this code `cars[con_sig].head()`, we can display the first few rows of the continuous features in the dataset. This allows us to visually inspect the values and understand the distribution and range of features.
-    
-![image](https://github.com/user-attachments/assets/7105dd75-b962-426e-a330-2296be74dc28)
+
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/7105dd75-b962-426e-a330-2296be74dc28" alt="CorrMat">
+  </p>
+
+
 
 ### Dropping unnecessary features
 
