@@ -371,12 +371,19 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
        'subaru', 'toyota', 'volkswagen', 'volvo'], dtype=object)
 ```
 
-### 4. Data Vidualization
+### 4. Data Visualization
 - This is a necessary step due to the data having some entries that needs to be processed. Also, we need to analyze the given dataset so we can evaluate what specific variables correlates to our dependent variable (price).
     - In the first subplot, the histogram provides a visual representation of the distribution of car prices, with the Kernel Density Estimate (KDE) curve overlaying the histogram for better clarity of the price distribution shape.
     - The second subplot, the box plot, allows us to see the median, quartiles, and any outliers in the price data, giving us further insights into the pricing distribution.
 
 ![image](https://github.com/user-attachments/assets/e88a6b4d-429e-41fe-acf4-27cd2f04530c)
+
+### Visualizing Categorical Data
+
+- Each illustrating the number of cars within different categories of the specified features.
+
+  ![image](https://github.com/user-attachments/assets/d69f9548-86ec-4b3e-bd2e-23140258ca2a)
+  ![image](https://github.com/user-attachments/assets/29345b57-3071-4c9f-8830-af8b8184eb1c)
 
  
 ## Customer Satisfaction Analysis Logistic Regression Model
