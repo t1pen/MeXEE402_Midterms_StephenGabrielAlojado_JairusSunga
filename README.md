@@ -572,7 +572,7 @@ R² Score: 93.08
 ```
 
  
-## Customer Satisfaction Analysis Logistic Regression Model
+# Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
 
 ### 1. Importing Required Libraries
