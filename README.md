@@ -2,12 +2,6 @@
 <p align="center"><b>Midterms for MexEE 402 - Electives 2
 <br> Prepared by: Stephen Gabriel S. Alojado and Jairus C. Sunga</b></p>
 
-<details>
-<summary>
-Table of Contents
-</summary>
-- [Introduction](#Introduction)
-</details>
 
 ## Introduction
 
@@ -324,13 +318,12 @@ cars.drop(columns='CarName', inplace=True)
 ```
 
 - Fixing Misspelled Company Names
-    -There's need to correct some misspelled company names in the dataset. The entries that require fixing are:
-
-- maxda → mazda
-- Nissan → nissan
-- porcshce → porsche
-- toyouta → toyota
-- vokswagen & vw → volkswagen
+  - There's need to correct some misspelled company names in the dataset. The entries that require fixing are:
+    - maxda → mazda
+    - Nissan → nissan
+    - porcshce → porsche
+    - toyouta → toyota
+    - vokswagen & vw → volkswagen
 
 ```python
 cars['CompanyName'].replace({
@@ -342,6 +335,8 @@ cars['CompanyName'].replace({
     'vw': 'volkswagen'
 }, inplace=True)
 ```
+- After processing the mispelled names, `CompanyName` will have correct entries.
+
 ```python
 array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
        'isuzu', 'jaguar', 'mazda', 'buick', 'mercury', 'mitsubishi',
@@ -351,54 +346,63 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
 
 ### 4. Data Visualization
 - This is a necessary step due to the data having some entries that needs to be processed. Also, we need to analyze the given dataset so we can evaluate what specific variables correlates to our dependent variable (price).
+
     - In the first subplot, the histogram provides a visual representation of the distribution of car prices, with the Kernel Density Estimate (KDE) curve overlaying the histogram for better clarity of the price distribution shape.
     - The second subplot, the box plot, allows us to see the median, quartiles, and any outliers in the price data, giving us further insights into the pricing distribution.
 
-![image](https://github.com/user-attachments/assets/e88a6b4d-429e-41fe-acf4-27cd2f04530c)
+<p align="center">
+  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_Price%20Dist.png?raw=true" alt="PriceDist">
+</p>
+
 
 ### Visualizing Categorical Data
 
 - Each illustrating the number of cars within different categories of the specified features.
 
-  ![image](https://github.com/user-attachments/assets/d69f9548-86ec-4b3e-bd2e-23140258ca2a)
-  ![image](https://github.com/user-attachments/assets/29345b57-3071-4c9f-8830-af8b8184eb1c)
+<p align="center">
+  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_Countplot.png?raw=true" alt="CountPlot">
+</p>
 
 - Box plots provide a visual summary of the central tendency, variability, and outliers of the car prices across different categorical features.
 
-  ![image](https://github.com/user-attachments/assets/46f20145-ed38-407a-8d99-725b4199805a)
-  ![image](https://github.com/user-attachments/assets/98746dfc-e48e-484d-8b49-10969960d21a)
+<p align="center">
+  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_BoxPlot.png?raw=true" alt="BoxPlot">
+</p>
 
 - Bar plots effectively illustrate the average car prices across different categories, allowing us to identify which features are associated with higher or lower prices.
 
-  ![image](https://github.com/user-attachments/assets/7f28c90c-9478-46af-ad51-46327943c1f2)
-  ![image](https://github.com/user-attachments/assets/b30174c3-18a0-4820-bd3a-1625c18645f0)
+<p align="center">
+  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_MeanPrice.png?raw=true" alt="MeanPrice">
+</p>
+
 
  - After visualization of the categorical features here are some of the insights:
 
-   - CompanyName: There is a noticeable difference in mean prices across different car manufacturers, which suggests that CompanyName could be a useful feature, although it may need to be encoded appropriately.
+   - `CompanyName`: There is a noticeable difference in mean prices across different car manufacturers, which suggests that CompanyName could be a useful feature, although it may need to be encoded appropriately.
 
-   - doornumber: The difference in mean price between cars with two and four doors is relatively small. This feature may have low predictive power for price.
+   - `doornumber`: The difference in mean price between cars with two and four doors is relatively small. This feature may have low predictive power for price.
 
-    - fueltype: There is a noticeable price difference between diesel and gas cars. fueltype could be useful.
+    - `fueltype`: There is a noticeable price difference between diesel and gas cars. fueltype could be useful.
 
-    - aspiration: There is a difference in mean price between turbo and standard aspiration, so aspiration could be a useful feature.
+    - `aspiration`: There is a difference in mean price between turbo and standard aspiration, so aspiration could be a useful feature.
 
-    - carbody: Different body styles show distinct mean prices, indicating that carbody may contribute to price prediction.
+    - `carbody`: Different body styles show distinct mean prices, indicating that carbody may contribute to price prediction.
 
-    - enginelocation: A significant price difference exists between front and rear engine locations. enginelocation might be an important feature.
+    - `enginelocation`: A significant price difference exists between front and rear engine locations. enginelocation might be an important feature.
 
-    - drivewheel: The mean prices vary by drive type (e.g., rwd, fwd, 4wd), so drivewheel could be a useful feature.
+    - `drivewheel`: The mean prices vary by drive type (e.g., rwd, fwd, 4wd), so drivewheel could be a useful feature.
 
-    - enginetype: There are noticeable price variations across different engine types, so enginetype might also be a useful predictor.
+    - `enginetype`: There are noticeable price variations across different engine types, so enginetype might also be a useful predictor.
 
-    - cylindernumber: The mean price varies with the number of cylinders, suggesting cylindernumber could be valuable.
+    - `cylindernumber`: The mean price varies with the number of cylinders, suggesting cylindernumber could be valuable.
 
-    - fuelsystem: While there is some variation in mean price across different fuel systems, it is relatively minor, indicating fuelsystem might be less significant.
+    - `fuelsystem`: While there is some variation in mean price across different fuel systems, it is relatively minor, indicating fuelsystem might be less significant.
 
 - To understand the relationship between the continuous features and the target variable (price), we can use scatter plots along with regression lines.
 
-![image](https://github.com/user-attachments/assets/de38f18f-d7c3-42c7-b5c5-44f6c6ce4850)
-![image](https://github.com/user-attachments/assets/0d45310c-0cfd-4447-bb5d-f1a56240868a)
+<p align="center">
+  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_scatterplot.png?raw=true" alt="ScatterPlot">
+</p>
 
 - To gain insights into the relationships between the numerical features and the target variable (price), we will compute the correlation matrix. This matrix reveals how strongly the features correlate with each other and with the target variable, helping us identify which features may have a significant impact on car prices.
   
