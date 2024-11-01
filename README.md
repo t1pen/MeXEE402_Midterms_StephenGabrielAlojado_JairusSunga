@@ -355,7 +355,7 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
 </p>
 
 
-### Visualizing Categorical Data
+#### Visualizing Categorical Data
 
 - Each illustrating the number of cars within different categories of the specified features.
 
@@ -447,60 +447,78 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
   - `highwaympg`
 
 ### 5. Feature Engineering
+
+#### Viewing and Inspecting our Significant Features
 - In this section, we will convert categorical data to numerical formats using One-Hot Encoding and Label Encoding. Additionally, we will drop unnecessary features based on the insights derived from the Exploratory Data Analysis (EDA).
 
   - By using this code `cars[con_sig].head()`, we can display the first few rows of the continuous features in the dataset. This allows us to visually inspect the values and understand the distribution and range of features.
 
-  <p align="center">
-    <img src="https://github.com/user-attachments/assets/7105dd75-b962-426e-a330-2296be74dc28" alt="CorrMat">
-  </p>
+    <p align="center">
+      <img src="https://github.com/user-attachments/assets/7105dd75-b962-426e-a330-2296be74dc28" alt="ConSig">
+    </p>
+
+  - By using this code `cars[cat_sig].head()`, we can display the first few rows of the categorical features in the dataset.
+
+    <p align="center">
+      <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_CatSig.png?raw=true" alt="CorrMat">
+    </p>
 
 
-
-### Dropping unnecessary features
-
-
-
-### Categorical Feature Engineering
+#### Categorical Feature Engineering
 
 - Converting cylindernumber from object datatype to numerical.
   
-
+  ```python
+  cars['cylindernumber'] = cars['cylindernumber'].replace({'four': 4, 'six': 6, 'five': 5, 'eight': 8, 'two': 2, 'three': 3, 'twelve': 12}).astype('int64')
+  cars[cat_sig].head()
+  ```
 
 - Converting other categorical features to numerical using One Hot Encoding
+  ```python
+  cat_ohe = ['CompanyName', 'fueltype', 'aspiration', 'carbody', 'enginelocation', 'drivewheel', 'enginetype']
 
+  cars_final = pd.get_dummies(cars, columns=cat_ohe, dtype='int64')
 
+  cars_final.head()
+  ```
 
 - Moving price to the rightmost column
-  
+  ``` python
+  cols = list(cars_final.columns)
+  cols.remove('price')
+  cols.append('price')
+
+  cars_final = cars_final[cols]
+  ```
 
 
 - Using this code cars_final.info(), we can retrieve a concise summary of the cars_final DataFrame, which includes essential information about the dataset's structure and content.
 
-```python
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 205 entries, 0 to 204
-Data columns (total 54 columns):
- #   Column                   Non-Null Count  Dtype  
----  ------                   --------------  -----  
- 0   cylindernumber           205 non-null    int64  
- 1   wheelbase                205 non-null    float64
- 2   carlength                205 non-null    float64
- 3   carwidth                 205 non-null    float64
- 4   curbweight               205 non-null    int64  
- 5   enginesize               205 non-null    int64  
- 6   boreratio                205 non-null    float64
- 7   horsepower               205 non-null    int64  
- 8   citympg                  205 non-null    int64  
- 9   highwaympg               205 non-null    int64  
- 10  CompanyName_alfa-romero  205 non-null    int64  
-...  
- 51  enginetype_ohcv          205 non-null    int64  
- 52  enginetype_rotor         205 non-null    int64  
- 53  price                    205 non-null    float64
-dtypes: float64(5), int64(49)
-memory usage: 86.6 KB
-```
+  ```python
+  <class 'pandas.core.frame.DataFrame'>
+  RangeIndex: 205 entries, 0 to 204
+  Data columns (total 54 columns):
+  #   Column                   Non-Null Count  Dtype  
+  ---  ------                   --------------  -----  
+  0   cylindernumber           205 non-null    int64  
+  1   wheelbase                205 non-null    float64
+  2   carlength                205 non-null    float64
+  3   carwidth                 205 non-null    float64
+  4   curbweight               205 non-null    int64  
+  5   enginesize               205 non-null    int64  
+  6   boreratio                205 non-null    float64
+  7   horsepower               205 non-null    int64  
+  8   citympg                  205 non-null    int64  
+  9   highwaympg               205 non-null    int64  
+  10  CompanyName_alfa-romero  205 non-null    int64  
+  ...  
+  51  enginetype_ohcv          205 non-null    int64  
+  52  enginetype_rotor         205 non-null    int64  
+  53  price                    205 non-null    float64
+  dtypes: float64(5), int64(49)
+  memory usage: 86.6 KB
+  ```
+- We now have finally processed our dataset for building our linear regression model.
 
 ### 6. Building the Model
 - This is the section where we will build our Linear Regression Model.
@@ -508,64 +526,90 @@ memory usage: 86.6 KB
 - Getting X and y Variables
   - To separate our features and target variable, we will create our independent variable matrix 𝑋 and dependent variable vector 𝑦 as follows:
 
-```python
-X = cars_final.iloc[:,:-1].values
-pd.DataFrame(X)
-```
+    ```python
+    X = cars_final.iloc[:,:-1].values
+    pd.DataFrame(X)
+    ```
 
-```python
-y = cars_final.iloc[:,-1].values
-pd.DataFrame(y)
-```
+    ```python
+    y = cars_final.iloc[:,-1].values
+    pd.DataFrame(y)
+    ```
 
 #### Train test split
 
-```pythin
-X_train shape: (164, 53)
-X_test shape: (41, 53)
-y_train shape: (164,)
-y_test shape: (41,)
-```
+- Splitting our dataset by `80-20` for our model training and model testing.
+
+  ```python
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=69)
+  print("X_train shape:", X_train.shape)
+  print("X_test shape:", X_test.shape)
+  print("y_train shape:", y_train.shape)
+  print("y_test shape:", y_test.shape)
+  ```
+- Results of the Train Test Split
+
+  ```python
+  X_train shape: (164, 53)
+  X_test shape: (41, 53)
+  y_train shape: (164,)
+  y_test shape: (41,)
+  ```
 
 #### Training Linear Regression Model
+- We use this code to train our data for Linear Regression Model.
 
-```python
-lr = LinearRegression()
-lr.fit(X_train, y_train)
-```
+  ```python
+  lr = LinearRegression()
+  lr.fit(X_train, y_train)
+  ```
 
 #### Inference
 
 - In this section, we will make predictions using our trained Linear Regression model.
-  
+
+```python
+data_sample = np.array([[4, 88.6, 168.8, 64.1, 2548, 130, 3.47, 111, 21, 27, 
+                      1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+                      0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 
+                      1, 1, 0, 0, 0, 0, 0, 0]])
+predicted_price = lr.predict(data_sample)
+print(f"Predicted Price: {round(predicted_price[0],2)}")
+price_row_1 = cars_final.iloc[0]['price']
+print(f"Actual Price: {price_row_1}")
+print(f"Difference: {price_row_1 - predicted_price}")
+```
+- Note that the `data_sample` is from the dataset checking if its has predicted the price of the car base on the data entry that we have set.
+
 ```python
 Predicted Price: 13647.55
 Actual Price: 13495.0
 Difference: [-152.55121761]
 ```
+- This show that we have a small difference from the Actual Price.
 
 ### 7. Evaluation of the Model
 - To evaluate the performance of our Linear Regression model, we will compute several key metrics: R² Score, Mean Absolute Error (MAE), Mean Squared Error (MSE), and Root Mean Squared Error (RMSE).
 
 #### R² Score
-- The R² score measures the proportion of variance in the dependent variable that can be explained by the independent variables. It ranges from 0 to 100, where a higher score indicates a better fit.
-  - R² Score: 93.08
-  - This indicates that approximately 93.08% of the variance in car prices is explained by our model.
+- The *R² score* measures the proportion of variance in the dependent variable that can be explained by the independent variables. It ranges from 0 to 100, where a higher score indicates a better fit.
+  - **R² Score:** 0.9308
+  - This indicates that approximately **93.08%** of the variance in car prices is explained by our model.
 
 #### Mean Absolute Error (MAE)
-- MAE measures the average magnitude of the errors in a set of predictions, without considering their direction. It’s calculated as the average over the test sample of the absolute differences between prediction and actual observation.
-    - Mean Absolute Error (MAE): 1,686.60
-    - This means, on average, our model’s predictions are off by approximately 1,686.60.
+- *MAE* measures the average magnitude of the errors in a set of predictions, without considering their direction. It’s calculated as the average over the test sample of the absolute differences between prediction and actual observation.
+    - **Mean Absolute Error (MAE):** 1,686.60
+    - This means, on average, our model’s predictions are off by approximately **1,686.60**.
  
 #### Mean Squared Error (MSE)
-- MSE measures the average of the squares of the errors—that is, the average squared difference between the estimated values and the actual value. It penalizes larger errors more than smaller ones.
-    - Mean Squared Error (MSE): 3,926,875.33
+- *MSE* measures the average of the squares of the errors—that is, the average squared difference between the estimated values and the actual value. It penalizes larger errors more than smaller ones.
+    - **Mean Squared Error (MSE):** 3,926,875.33
     - This indicates the overall magnitude of the error.
  
 #### Root Mean Squared Error (RMSE)
-- RMSE is the square root of the mean of the squared errors and is useful for understanding how far off predictions are from actual values.
-    - Root Mean Squared Error (RMSE): 1,981.63
-    - This means that the average prediction error is about 1,981.63, giving us a sense of the model's accuracy in terms of actual dollar amounts.
+- *RMSE* is the square root of the mean of the squared errors and is useful for understanding how far off predictions are from actual values.
+    - **Root Mean Squared Error (RMSE):** 1,981.63
+    - This means that the average prediction error is about **1,981.63**, giving us a sense of the model's accuracy in terms of actual dollar amounts.
  
 ### Plotting of the Predicted vs. Actual Price
 
