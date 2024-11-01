@@ -275,7 +275,7 @@ print(f"Number of continuous features: {len(continuous)}")
   - Number of categorical features: 11
   - Number of continuous features: 15
 
- -We can print out the names of the categorical and continuous features identified in the previous step.
+ - We can print out the names of the categorical and continuous features identified in the previous step.
 
  ```python
  Categorical Features:
@@ -348,11 +348,11 @@ cars.drop(columns='CarName', inplace=True)
 - Fixing Misspelled Company Names
     -There's need to correct some misspelled company names in the dataset. The entries that require fixing are:
 
-maxda → mazda
-Nissan → nissan
-porcshce → porsche
-toyouta → toyota
-vokswagen & vw → volkswagen
+- maxda → mazda
+- Nissan → nissan
+- porcshce → porsche
+- toyouta → toyota
+- vokswagen & vw → volkswagen
 
 ```python
 cars['CompanyName'].replace({
