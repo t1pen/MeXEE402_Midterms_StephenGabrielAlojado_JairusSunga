@@ -390,6 +390,13 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
   ![image](https://github.com/user-attachments/assets/46f20145-ed38-407a-8d99-725b4199805a)
   ![image](https://github.com/user-attachments/assets/98746dfc-e48e-484d-8b49-10969960d21a)
 
+- Bar plots effectively illustrate the average car prices across different categories, allowing us to identify which features are associated with higher or lower prices.
+
+  ![image](https://github.com/user-attachments/assets/7f28c90c-9478-46af-ad51-46327943c1f2)
+  ![image](https://github.com/user-attachments/assets/b30174c3-18a0-4820-bd3a-1625c18645f0)
+
+  
+
 
  
 ## Customer Satisfaction Analysis Logistic Regression Model
