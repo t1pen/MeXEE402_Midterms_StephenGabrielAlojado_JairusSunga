@@ -466,14 +466,14 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
 ### Feature Engineering
 - In this section, we will convert categorical data to numerical formats using One-Hot Encoding and Label Encoding. Additionally, we will drop unnecessary features based on the insights derived from the Exploratory Data Analysis (EDA).
 
-
+```python
 wheelbase	carlength	carwidth	curbweight	enginesize	boreratio	horsepower	citympg	highwaympg	price
 0	88.6	168.8	64.1	2548	130	3.47	111	21	27	13495.0
 1	88.6	168.8	64.1	2548	130	3.47	111	21	27	16500.0
 2	94.5	171.2	65.5	2823	152	2.68	154	19	26	16500.0
 3	99.8	176.6	66.2	2337	109	3.19	102	24	30	13950.0
 4	99.4	176.6	66.4	2824	136	3.19	115	18	22	17450.0
-
+```
 
  
 ## Customer Satisfaction Analysis Logistic Regression Model
