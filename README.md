@@ -349,30 +349,30 @@ This pair project for **MexEE 402 - Electives 2** aims:
     - In the first subplot, the histogram provides a visual representation of the distribution of car prices, with the Kernel Density Estimate (KDE) curve overlaying the histogram for better clarity of the price distribution shape.
     - The second subplot, the box plot, allows us to see the median, quartiles, and any outliers in the price data, giving us further insights into the pricing distribution.
 
-<p align="center">
-  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_Price%20Dist.png?raw=true" alt="PriceDist">
-</p>
+  <p align="center">
+    <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_Price%20Dist.png?raw=true" alt="PriceDist">
+  </p>
 
 
 #### Visualizing Categorical Data
 
 - Each illustrating the number of cars within different categories of the specified features.
 
-<p align="center">
-  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_Countplot.png?raw=true" alt="CountPlot">
-</p>
+  <p align="center">
+    <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_Countplot.png?raw=true" alt="CountPlot">
+  </p>
 
 - Box plots provide a visual summary of the central tendency, variability, and outliers of the car prices across different categorical features.
 
-<p align="center">
-  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_BoxPlot.png?raw=true" alt="BoxPlot">
-</p>
+  <p align="center">
+    <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_BoxPlot.png?raw=true" alt="BoxPlot">
+  </p>
 
 - Bar plots effectively illustrate the average car prices across different categories, allowing us to identify which features are associated with higher or lower prices.
 
-<p align="center">
-  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_MeanPrice.png?raw=true" alt="MeanPrice">
-</p>
+  <p align="center">
+    <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_MeanPrice.png?raw=true" alt="MeanPrice">
+  </p>
 
 
  - After visualization of the categorical features here are some of the insights:
@@ -399,15 +399,15 @@ This pair project for **MexEE 402 - Electives 2** aims:
 
 - To understand the relationship between the continuous features and the target variable (price), we can use scatter plots along with regression lines.
 
-<p align="center">
-  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_scatterplot.png?raw=true" alt="ScatterPlot">
-</p>
+  <p align="center">
+    <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_scatterplot.png?raw=true" alt="ScatterPlot">
+  </p>
 
 - To gain insights into the relationships between the numerical features and the target variable (price), we will compute the correlation matrix. This matrix reveals how strongly the features correlate with each other and with the target variable, helping us identify which features may have a significant impact on car prices.
   
-<p align="center">
-  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_Corr.png?raw=true" alt="CorrMat">
-</p>
+  <p align="center">
+    <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_Corr.png?raw=true" alt="CorrMat">
+  </p>
 
 - In this heatmap, the correlation coefficients are displayed, with values ranging from -1 to 1. A value close to 1 indicates a strong positive correlation, meaning that as one variable increases, the other tends to increase as well. Conversely, a value close to -1 indicates a strong negative correlation. Values around 0 suggest little to no linear relationship between the variables.
 
