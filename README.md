@@ -728,8 +728,6 @@ from sklearn.metrics import accuracy_score
   - The continuous features we are analyzing include 'delivery_experience', 'food_quality', and 'delivery_speed'. These features provide insights into customer satisfaction in terms of delivery performance and food quality. 
   ![image](https://github.com/user-attachments/assets/8569844a-cf57-4a26-917c-183a335c12de)
 
-     
-
 #### Visualizing Continuous Features with Box Plots
   ![image](https://github.com/user-attachments/assets/796875bd-b0b9-4b23-834b-fc78f2237ea6)
 
@@ -839,7 +837,7 @@ print(f"Accuracy Score: {accuracy:.4f}")
   [  43 1516]]
   ```
 
-## Results
+## Results and Discussion
 
 ### Car Price Prediction (Linear Regression)
 
@@ -864,3 +862,25 @@ print(f"Accuracy Score: {accuracy:.4f}")
 - *RMSE* is the square root of the mean of the squared errors and is useful for understanding how far off predictions are from actual values.
     - **Root Mean Squared Error (RMSE):** 1,981.63
     - This means that the average prediction error is about **1,981.63**, giving us a sense of the model's accuracy in terms of actual dollar amounts.
+
+### Customer Satisfaction (Logistic Regression)
+
+- After building the logistic regression model, we are able to predict whether the order was complete or not based on the ratings given for delivery experience, food quality, and delivery speed. Given below is the summary of the results.
+
+#### Accuracy Score
+- This means that the model correctly predicts the order accuracy approximately **71.94%** of the time.
+  - **Accuracy Score:** 0.7194
+
+- This means that it has a low score of accuracy. Based on our data analysis of the dataset, the order accuracy has little to no correlation with its predictors making our model prediction to have a low score (*Refer to* [Data Visualization](#3-data-visualization)).
+
+#### Confusion Matrix
+
+The confusion matrix can be interpreted as follows:
+
+- **True Negatives (TN):** *12* - The model correctly predicted that 12 orders were accurate (i.e., the model predicted "accurate" and the actual was also "accurate").
+
+- **False Positives (FP):** *553* - The model incorrectly predicted that 553 orders were accurate when they were not (i.e., predicted "accurate," but the actual was "inaccurate").
+- **False Negatives (FN):** *43* - The model incorrectly predicted that 43 orders were inaccurate when they were actually accurate (i.e., predicted "inaccurate," but the actual was "accurate").
+- **True Positives (TP):** *1516* - The model correctly predicted that 1516 orders were inaccurate.
+
+## 
