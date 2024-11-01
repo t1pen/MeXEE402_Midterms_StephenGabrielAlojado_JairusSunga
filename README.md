@@ -279,8 +279,8 @@ print(f"Number of categorical features: {len(categorical)}")
 print(f"Number of continuous features: {len(continuous)}")
 ```
 - This results to:
-  - Number of categorical features: 11
-  - Number of continuous features: 15
+  - **Number of categorical features:** 11
+  - **Number of continuous features:** 15
 
  - We can print out the names of the categorical and continuous features identified in the previous step.
 
@@ -301,38 +301,9 @@ Index(['car_ID', 'wheelbase', 'carlength', 'carwidth', 'carheight',
 - Checking for NaN Values in the Dataset
   - Before proceeding with data analysis and model building, it's important to check for any missing values (NaN) in the dataset.
     -The following code snippet checks for NaN values in the dataset:
-    ```python
-    cars.isnull().sum()
-    ```
 
 ```python
-car_ID              0
-symboling           0
-CarName             0
-fueltype            0
-aspiration          0
-doornumber          0
-carbody             0
-drivewheel          0
-enginelocation      0
-wheelbase           0
-carlength           0
-carwidth            0
-carheight           0
-curbweight          0
-enginetype          0
-cylindernumber      0
-enginesize          0
-fuelsystem          0
-boreratio           0
-stroke              0
-compressionratio    0
-horsepower          0
-peakrpm             0
-citympg             0
-highwaympg          0
-price               0
-dtype: int64
+cars.isnull().sum()
 ```
 
   - The output indicates that there are no missing values in any of the columns
