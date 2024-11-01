@@ -202,53 +202,53 @@ This pair project for **MexEE 402 - Electives 2** aims:
 ### 1. Preparing the libraries
 - For use to be able to easily analyze the dataset given, we will be needing various `libraries` for our program. This involves the libraries meant for interfacing the dataset, data visualization, building the model, and evaluation the model. The following code for importing the libraries is shown below.
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
-from sklearn.metrics import mean_squared_error, mean_absolute_error
-```
+  ```python
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  import seaborn as sns
+  import numpy as np
+  from sklearn.model_selection import train_test_split
+  from sklearn.preprocessing import LabelEncoder
+  from sklearn.linear_model import LinearRegression
+  from sklearn.metrics import r2_score
+  from sklearn.metrics import mean_squared_error, mean_absolute_error
+  ```
 - Libraries used was primarily, `pandas`, `seaborn`, `numpy`, and `sklearn`. 
 
 
 ### 2. Data Understanding
 - First we need to load our dataset and show the first rows of the dataset using the code below.
 
-``` python
-cars = pd.read_csv('CarPrice_Assignment.csv')
-cars.head()
-```
+  ``` python
+  cars = pd.read_csv('CarPrice_Assignment.csv')
+  cars.head()
+  ```
 - Given the data, it involves various data types describing the specification of the car. With this we still need to understand the given dataset through programming techniques such as `.info()`, `.describe()`, and `.head()`.
 
 - Using `.info()`, we have been given the datatypes of each column and the shape of our dataset.
 
-```python
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 205 entries, 0 to 204
-Data columns (total 26 columns):
- #   Column            Non-Null Count  Dtype  
----  ------            --------------  -----  
- 0   car_ID            205 non-null    int64  
- 1   symboling         205 non-null    int64  
- 2   CarName           205 non-null    object 
- 3   fueltype          205 non-null    object 
- 4   aspiration        205 non-null    object 
- 5   doornumber        205 non-null    object 
- 6   carbody           205 non-null    object 
- 7   drivewheel        205 non-null    object 
- 8   enginelocation    205 non-null    object 
- 9   wheelbase         205 non-null    float64
- 10  carlength         205 non-null    float64
-...
- 24  highwaympg        205 non-null    int64  
- 25  price             205 non-null    float64
-dtypes: float64(8), int64(8), object(10)
-```
+  ```python
+  <class 'pandas.core.frame.DataFrame'>
+  RangeIndex: 205 entries, 0 to 204
+  Data columns (total 26 columns):
+  #   Column            Non-Null Count  Dtype  
+  ---  ------            --------------  -----  
+  0   car_ID            205 non-null    int64  
+  1   symboling         205 non-null    int64  
+  2   CarName           205 non-null    object 
+  3   fueltype          205 non-null    object 
+  4   aspiration        205 non-null    object 
+  5   doornumber        205 non-null    object 
+  6   carbody           205 non-null    object 
+  7   drivewheel        205 non-null    object 
+  8   enginelocation    205 non-null    object 
+  9   wheelbase         205 non-null    float64
+  10  carlength         205 non-null    float64
+  ...
+  24  highwaympg        205 non-null    int64  
+  25  price             205 non-null    float64
+  dtypes: float64(8), int64(8), object(10)
+  ```
 
 - Based on the information above, we have *26 columns* and *205 rows* of data. It is also determined that we have `object` type data (mainly categorical) so we need to process it on the later part.
 
@@ -259,46 +259,46 @@ dtypes: float64(8), int64(8), object(10)
 
     - After referring to the data dictionary, we determined that the `symboling` feature is a categorical variable. Therefore, we need to convert it from its integer representation to an object type. This allows the model to treat it as a category rather than a numerical value, which is important for proper analysis and interpretation.
       
-```python
-cars['symboling'] = cars['symboling'].astype('object')
-```
+  ```python
+  cars['symboling'] = cars['symboling'].astype('object')
+  ```
 
 - In using the code below we will identify the continuous and categorical features in our dataset.
 
-```python
-categorical = cars.select_dtypes(include=['object']).columns
-continuous = cars.select_dtypes(include=['float64', 'int64']).columns
+  ```python
+  categorical = cars.select_dtypes(include=['object']).columns
+  continuous = cars.select_dtypes(include=['float64', 'int64']).columns
 
-print(f"Number of categorical features: {len(categorical)}")
-print(f"Number of continuous features: {len(continuous)}")
-```
+  print(f"Number of categorical features: {len(categorical)}")
+  print(f"Number of continuous features: {len(continuous)}")
+  ```
 - This results to:
   - **Number of categorical features:** 11
   - **Number of continuous features:** 15
 
  - We can print out the names of the categorical and continuous features identified in the previous step.
 
- ```python
- Categorical Features:
-Index(['symboling', 'CarName', 'fueltype', 'aspiration', 'doornumber',
-       'carbody', 'drivewheel', 'enginelocation', 'enginetype',
-       'cylindernumber', 'fuelsystem'],
-      dtype='object')
+  ```python
+  Categorical Features:
+  Index(['symboling', 'CarName', 'fueltype', 'aspiration', 'doornumber',
+        'carbody', 'drivewheel', 'enginelocation', 'enginetype',
+        'cylindernumber', 'fuelsystem'],
+        dtype='object')
 
-Continuous Features:
-Index(['car_ID', 'wheelbase', 'carlength', 'carwidth', 'carheight',
-       'curbweight', 'enginesize', 'boreratio', 'stroke', 'compressionratio',
-       'horsepower', 'peakrpm', 'citympg', 'highwaympg', 'price'],
-      dtype='object')
-```
+  Continuous Features:
+  Index(['car_ID', 'wheelbase', 'carlength', 'carwidth', 'carheight',
+        'curbweight', 'enginesize', 'boreratio', 'stroke', 'compressionratio',
+        'horsepower', 'peakrpm', 'citympg', 'highwaympg', 'price'],
+        dtype='object')
+  ```
 
 - Checking for NaN Values in the Dataset
   - Before proceeding with data analysis and model building, it's important to check for any missing values (NaN) in the dataset.
     -The following code snippet checks for NaN values in the dataset:
 
-```python
-cars.isnull().sum()
-```
+  ```python
+  cars.isnull().sum()
+  ```
 
   - The output indicates that there are no missing values in any of the columns
 
@@ -307,15 +307,15 @@ cars.isnull().sum()
 
 - To analyze the dataset effectively, we first separate the company name and car model from the `CarName` feature. The company name will be extracted using the following code:
 
-```python
-cars['CompanyName'] = cars['CarName'].apply(lambda x: x.split(" ")[0])
-```
+  ```python
+  cars['CompanyName'] = cars['CarName'].apply(lambda x: x.split(" ")[0])
+  ```
 
 - Once we have the `CompanyName`, we can drop the original `CarName` column in favor of the new feature. We can accomplish this with the following code:
 
-```python
-cars.drop(columns='CarName', inplace=True)
-```
+  ```python
+  cars.drop(columns='CarName', inplace=True)
+  ```
 
 - Fixing Misspelled Company Names
   - There's need to correct some misspelled company names in the dataset. The entries that require fixing are:
@@ -325,24 +325,24 @@ cars.drop(columns='CarName', inplace=True)
     - toyouta → toyota
     - vokswagen & vw → volkswagen
 
-```python
-cars['CompanyName'].replace({
-    'maxda': 'mazda',
-    'Nissan': 'nissan',
-    'porcshce': 'porsche',
-    'toyouta': 'toyota',
-    'vokswagen': 'volkswagen',
-    'vw': 'volkswagen'
-}, inplace=True)
-```
+  ```python
+  cars['CompanyName'].replace({
+      'maxda': 'mazda',
+      'Nissan': 'nissan',
+      'porcshce': 'porsche',
+      'toyouta': 'toyota',
+      'vokswagen': 'volkswagen',
+      'vw': 'volkswagen'
+  }, inplace=True)
+  ```
 - After processing the mispelled names, `CompanyName` will have correct entries.
 
-```python
-array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
-       'isuzu', 'jaguar', 'mazda', 'buick', 'mercury', 'mitsubishi',
-       'nissan', 'peugeot', 'plymouth', 'porsche', 'renault', 'saab',
-       'subaru', 'toyota', 'volkswagen', 'volvo'], dtype=object)
-```
+  ```python
+  array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
+        'isuzu', 'jaguar', 'mazda', 'buick', 'mercury', 'mitsubishi',
+        'nissan', 'peugeot', 'plymouth', 'porsche', 'renault', 'saab',
+        'subaru', 'toyota', 'volkswagen', 'volvo'], dtype=object)
+  ```
 
 ### 4. Data Visualization
 - This is a necessary step due to the data having some entries that needs to be processed. Also, we need to analyze the given dataset so we can evaluate what specific variables correlates to our dependent variable (price).
