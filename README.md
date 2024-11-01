@@ -189,11 +189,11 @@ This pair project for **MexEE 402 - Electives 2** aims:
 
 - **Continuous Data**
 
-  - `delivery experience` - delivery experience rating *(Scale of 1 - 5)*
+  - `delivery_experience` - delivery experience rating *(Scale of 1 - 5)*
 
-  - `food quality` - quality of the food *(Scale of 1 - 5)*
+  - `food_quality` - quality of the food *(Scale of 1 - 5)*
   
-  - `delivery speed` - speed of the delivery *(Scale of 1 -5)*
+  - `delivery_speed` - speed of the delivery *(Scale of 1 -5)*
 
 
 
