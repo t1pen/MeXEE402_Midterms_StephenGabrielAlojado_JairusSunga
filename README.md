@@ -349,9 +349,13 @@ cars.drop(columns='CarName', inplace=True)
     -There's need to correct some misspelled company names in the dataset. The entries that require fixing are:
   
 maxda → mazda
+
 Nissan → nissan
+
 porcshce → porsche
+
 toyouta → toyota
+
 vokswagen & vw → volkswagen
 
 ```python
