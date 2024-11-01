@@ -67,7 +67,6 @@ Whereas,
 </p>
 
 ---
-
 ### Summary
 
 <div align="center">
