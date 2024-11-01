@@ -253,6 +253,84 @@ dtypes: float64(8), int64(8), object(10)
 
 - For the feature `symboling` it is stated that it is an `int64` datatype. However, it is stated that it is a categorical data so we make it as an `object` type of data (but later on will not be used due to being a weak predictor).
 
+### 3. Data Preprocessing
+  - Convert "symboling" to Categorical Data
+
+    - After referring to the data dictionary, we determined that the `symboling` feature is a categorical variable. Therefore, we need to convert it from its integer representation to an object type. This allows the model to treat it as a category rather than a numerical value, which is important for proper analysis and interpretation.
+      
+```python
+cars['symboling'] = cars['symboling'].astype('object')
+```
+
+- In using the code below we will identify the continuous and categorical features in our dataset.
+
+```python
+categorical = cars.select_dtypes(include=['object']).columns
+continuous = cars.select_dtypes(include=['float64', 'int64']).columns
+
+print(f"Number of categorical features: {len(categorical)}")
+print(f"Number of continuous features: {len(continuous)}")
+```
+- This results to:
+  - Number of categorical features: 11
+  - Number of continuous features: 15
+
+ -We can print out the names of the categorical and continuous features identified in the previous step.
+
+ ```python
+ Categorical Features:
+Index(['symboling', 'CarName', 'fueltype', 'aspiration', 'doornumber',
+       'carbody', 'drivewheel', 'enginelocation', 'enginetype',
+       'cylindernumber', 'fuelsystem'],
+      dtype='object')
+
+Continuous Features:
+Index(['car_ID', 'wheelbase', 'carlength', 'carwidth', 'carheight',
+       'curbweight', 'enginesize', 'boreratio', 'stroke', 'compressionratio',
+       'horsepower', 'peakrpm', 'citympg', 'highwaympg', 'price'],
+      dtype='object')
+```
+
+- Checking for NaN Values in the Dataset
+  - Before proceeding with data analysis and model building, it's important to check for any missing values (NaN) in the dataset.
+    -The following code snippet checks for NaN values in the dataset:
+    ```python
+    cars.isnull().sum()
+    ```
+
+```python
+car_ID              0
+symboling           0
+CarName             0
+fueltype            0
+aspiration          0
+doornumber          0
+carbody             0
+drivewheel          0
+enginelocation      0
+wheelbase           0
+carlength           0
+carwidth            0
+carheight           0
+curbweight          0
+enginetype          0
+cylindernumber      0
+enginesize          0
+fuelsystem          0
+boreratio           0
+stroke              0
+compressionratio    0
+horsepower          0
+peakrpm             0
+citympg             0
+highwaympg          0
+price               0
+dtype: int64
+```
+
+  - The output indicates that there are no missing values in any of the columns
+
+
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
 
