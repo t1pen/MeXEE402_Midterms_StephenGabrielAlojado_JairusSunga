@@ -271,9 +271,47 @@ from sklearn.metrics import accuracy_score
 ```
 ### 2. Loading Dataset
 - This process involves importing customer survey data from a CSV file into a DataFrame for subsequent analysis and visualization. This displays the some rows to provide a quick overview of the data.
-- 
+  
 ``` python
 dataset = pd.read_csv('Customer-survey-data.csv')
 dataset.head()
 ```
-- 
+Verifying Dataset Dimensions
+-This step checks the number of rows and columns in the dataset, providing an overview of its size and structure to help gauge the amount of data available for analysis.
+``` python
+rows, columns = dataset.shape
+print(f"Number of rows: {rows}")
+print(f"Number of columns: {columns}")
+```
+-In the data there's a lengthy column names and it is not visually appealing with that 'Renaming Dataset Columns" would be great for improved clarity and readability, making the data easier to work with and understand at a glance.
+
+  - Previous data with lengthy names
+![image](https://github.com/user-attachments/assets/087c1903-62d5-43fc-a9ea-cf2972e040fa)
+
+``` python
+dataset = dataset.rename(columns={'Customer': 'Customer',
+       'How satisfied were you with your overall delivery experience at Ali?                    1-5 where 1 = extremely dissatisfied and 5 = extremely satisfied': 'delivery_experience',
+       'How satisfied were you with the quality of the food at Alis?                             1-5 where 1 = extremely dissatisfied and 5 = extremely satisfied': 'food_quality',
+       'How satisfied were you with the speed of delivery at Alis?                                1-5 where 1 = extremely dissatisfied and 5 = extremely satisfied': 'delivery_speed',
+       'Was your order accurate? Please respond yes or no.': 'Order_Accuracy'})
+dataset
+```
+  - After 'Renaming'
+![image](https://github.com/user-attachments/assets/8c7ab110-c6a5-4e8c-be05-75a35c731a9d)
+
+-In '.infor()', this will explore data types, non-null counts, and memory usage, which gives insight into the structure and quality of the data, identifying any missing or incorrect values that might require preprocessing.
+
+``` python
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10616 entries, 0 to 10615
+Data columns (total 5 columns):
+ #   Column               Non-Null Count  Dtype  
+---  ------               --------------  -----  
+ 0   Customer             10616 non-null  int64  
+ 1   delivery_experience  10198 non-null  float64
+ 2   food_quality         10364 non-null  float64
+ 3   delivery_speed       10377 non-null  float64
+ 4   Order_Accuracy       9956 non-null   object 
+dtypes: float64(3), int64(1), object(1)
+```
+
