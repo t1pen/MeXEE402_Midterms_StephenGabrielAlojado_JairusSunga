@@ -132,7 +132,7 @@ This pair project for **MexEE 402 - Electives 2** aims:
   - `cylindernumber` - cylinder placed in the car	*(four, three, etc.)*		
   
   - `fuelsystem` - Fuel system of car *(mpfi, 2bbl, etc.)* 
-    
+
 - **Continuous Data**
 
   - `Car_ID` - Unique id of each observation (Interger)		
@@ -185,14 +185,16 @@ This pair project for **MexEE 402 - Electives 2** aims:
 
 - **Categorical Data**
 
-  - `order accuracy` - completenes of the order (Yes or No)
+  - `order accuracy` - completenes of the order *(Yes or No)*
 
 - **Continuous Data**
 
-  - `delivery experience` - delivery experience rating (Scale of 1 - 5)
+  - `delivery experience` - delivery experience rating *(Scale of 1 - 5)*
 
-  - `food quality` - quality of the food (Scale of 1 - 5)
+  - `food quality` - quality of the food *(Scale of 1 - 5)*
   
-  - `delivery speed` - speed of the delivery (Scale of 1 -5)
+  - `delivery speed` - speed of the delivery *(Scale of 1 -5)*
+
+
 
 
