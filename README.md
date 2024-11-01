@@ -829,7 +829,7 @@ print(f"Accuracy Score: {accuracy:.4f}")
   print("Confusion Matrix:")
   print(cm)
   ```
-- Giving this results
+- Giving this results:
   ```python
   Accuracy Score: 0.7194
   Confusion Matrix:
