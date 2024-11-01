@@ -2,7 +2,12 @@
 <p align="center"><b>Midterms for MexEE 402 - Electives 2
 <br> Prepared by: Stephen Gabriel S. Alojado and Jairus C. Sunga</b></p>
 
+<details>
+<summary>
+Table of Contents
+</summary>
 
+</details>
 
 ## Introduction
 
