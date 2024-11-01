@@ -277,6 +277,7 @@ dataset = pd.read_csv('Customer-survey-data.csv')
 dataset.head()
 ```
 Verifying Dataset Dimensions
+
 -This step checks the number of rows and columns in the dataset, providing an overview of its size and structure to help gauge the amount of data available for analysis.
 ``` python
 rows, columns = dataset.shape
@@ -297,6 +298,7 @@ dataset = dataset.rename(columns={'Customer': 'Customer',
 dataset
 ```
   - After 'Renaming'
+
 ![image](https://github.com/user-attachments/assets/8c7ab110-c6a5-4e8c-be05-75a35c731a9d)
 
 -In '.infor()', this will explore data types, non-null counts, and memory usage, which gives insight into the structure and quality of the data, identifying any missing or incorrect values that might require preprocessing.
