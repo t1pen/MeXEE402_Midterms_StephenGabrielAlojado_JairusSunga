@@ -385,6 +385,12 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
   ![image](https://github.com/user-attachments/assets/d69f9548-86ec-4b3e-bd2e-23140258ca2a)
   ![image](https://github.com/user-attachments/assets/29345b57-3071-4c9f-8830-af8b8184eb1c)
 
+- Box plots provide a visual summary of the central tendency, variability, and outliers of the car prices across different categorical features.
+
+  ![image](https://github.com/user-attachments/assets/46f20145-ed38-407a-8d99-725b4199805a)
+  ![image](https://github.com/user-attachments/assets/98746dfc-e48e-484d-8b49-10969960d21a)
+
+
  
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
