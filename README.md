@@ -637,108 +637,108 @@ from sklearn.metrics import accuracy_score
 ### 2. Loading Dataset
 - This process involves importing customer survey data from a CSV file into a DataFrame for subsequent analysis and visualization. This displays the some rows to provide a quick overview of the data.
   
-``` python
-dataset = pd.read_csv('Customer-survey-data.csv')
-dataset.head()
-```
+  ``` python
+  dataset = pd.read_csv('Customer-survey-data.csv')
+  dataset.head()
+  ```
 #### Verifying Dataset Dimensions
 
--This step checks the number of rows and columns in the dataset, providing an overview of its size and structure to help gauge the amount of data available for analysis.
-``` python
-rows, columns = dataset.shape
-print(f"Number of rows: {rows}")
-print(f"Number of columns: {columns}")
-```
--In the data there's a lengthy column names and it is not visually appealing with that `Renaming Dataset Columns` would be great for improved clarity and readability, making the data easier to work with and understand at a glance.
+- This step checks the number of rows and columns in the dataset, providing an overview of its size and structure to help gauge the amount of data available for analysis.
+
+  ``` python
+  rows, columns = dataset.shape
+  print(f"Number of rows: {rows}")
+  print(f"Number of columns: {columns}")
+  ```
+- In the data there's a lengthy column names and it is not visually appealing with that `Renaming Dataset Columns` would be great for improved clarity and readability, making the data easier to work with and understand at a glance.
 
   - Previous data with lengthy names
 ![image](https://github.com/user-attachments/assets/087c1903-62d5-43fc-a9ea-cf2972e040fa)
 
-``` python
-dataset = dataset.rename(columns={'Customer': 'Customer',
-       'How satisfied were you with your overall delivery experience at Ali?                    1-5 where 1 = extremely dissatisfied and 5 = extremely satisfied': 'delivery_experience',
-       'How satisfied were you with the quality of the food at Alis?                             1-5 where 1 = extremely dissatisfied and 5 = extremely satisfied': 'food_quality',
-       'How satisfied were you with the speed of delivery at Alis?                                1-5 where 1 = extremely dissatisfied and 5 = extremely satisfied': 'delivery_speed',
-       'Was your order accurate? Please respond yes or no.': 'Order_Accuracy'})
-dataset
-```
+  ``` python
+  dataset = dataset.rename(columns={'Customer': 'Customer',
+        'How satisfied were you with your overall delivery experience at Ali?                    1-5 where 1 = extremely dissatisfied and 5 = extremely satisfied': 'delivery_experience',
+        'How satisfied were you with the quality of the food at Alis?                             1-5 where 1 = extremely dissatisfied and 5 = extremely satisfied': 'food_quality',
+        'How satisfied were you with the speed of delivery at Alis?                                1-5 where 1 = extremely dissatisfied and 5 = extremely satisfied': 'delivery_speed',
+        'Was your order accurate? Please respond yes or no.': 'Order_Accuracy'})
+  dataset
+  ```
   - After `Renaming`
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/8c7ab110-c6a5-4e8c-be05-75a35c731a9d" alt="Description of Image" />
-</p>
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/8c7ab110-c6a5-4e8c-be05-75a35c731a9d" alt="Description of Image" />
+  </p>
 
--In `.info()`, this will explore data types, non-null counts, and memory usage, which gives insight into the structure and quality of the data, identifying any missing or incorrect values that might require preprocessing.
+- In `.info()`, this will explore data types, non-null counts, and memory usage, which gives insight into the structure and quality of the data, identifying any missing or incorrect values that might require preprocessing.
 
-``` python
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 10616 entries, 0 to 10615
-Data columns (total 5 columns):
- #   Column               Non-Null Count  Dtype  
----  ------               --------------  -----  
- 0   Customer             10616 non-null  int64  
- 1   delivery_experience  10198 non-null  float64
- 2   food_quality         10364 non-null  float64
- 3   delivery_speed       10377 non-null  float64
- 4   Order_Accuracy       9956 non-null   object 
-dtypes: float64(3), int64(1), object(1)
-```
+  ``` python
+  <class 'pandas.core.frame.DataFrame'>
+  RangeIndex: 10616 entries, 0 to 10615
+  Data columns (total 5 columns):
+  #   Column               Non-Null Count  Dtype  
+  ---  ------               --------------  -----  
+  0   Customer             10616 non-null  int64  
+  1   delivery_experience  10198 non-null  float64
+  2   food_quality         10364 non-null  float64
+  3   delivery_speed       10377 non-null  float64
+  4   Order_Accuracy       9956 non-null   object 
+  dtypes: float64(3), int64(1), object(1)
+  ```
 
 
 - Checking for NaN Values in the Dataset
     - To ensure the integrity of our dataset and the reliability of our logistic regression model, it is important to identify and handle any missing values. The following counts of NaN values for each column in the dataset were obtained:
 
-```python
-Customer                 0
-delivery_experience    418
-food_quality           252
-delivery_speed         239
-Order_Accuracy         660
-dtype: int64
-```
+      ```python
+      Customer                 0
+      delivery_experience    418
+      food_quality           252
+      delivery_speed         239
+      Order_Accuracy         660
+      dtype: int64
+      ```
 
 - To maintain the integrity of our dataset and enhance the performance of our logistic regression model, it is important to address the missing values identified in the previous section.
 
-```python
-for col in dataset: 
-    dataset[col] = dataset[col].fillna(dataset[col].median())
-```
+  ```python
+  for col in dataset: 
+      dataset[col] = dataset[col].fillna(dataset[col].median())
+  ```
 
 - Checking for NaN Values After Filling
     - After filling the missing values in our dataset, it is important to verify that all NaN values have been successfully handled
 
-```python
-NaN values in dataset after handling:
- Customer               0
-delivery_experience    0
-food_quality           0
-delivery_speed         0
-Order_Accuracy         0
-dtype: int64
-```
+  ```python
+  NaN values in dataset after handling:
+  Customer               0
+  delivery_experience    0
+  food_quality           0
+  delivery_speed         0
+  Order_Accuracy         0
+  dtype: int64
+  ```
 
 ### 3. Data Visualization
 - This is where we visualize our dataset and observe the correlation of our variables using Data Visualization Techniques
 
-  - Visualizing Categorical Data
-    ![image](https://github.com/user-attachments/assets/f6a7b466-f0e8-4909-9638-e25be2ada36e)
+#### Visualizing Categorical Data
+  ![image](https://github.com/user-attachments/assets/f6a7b466-f0e8-4909-9638-e25be2ada36e)
 
-  - Visualizing Continuous Data
-     - The continuous features we are analyzing include 'delivery_experience', 'food_quality', and 'delivery_speed'. These features provide insights into customer satisfaction in terms of delivery performance and food quality.
-     - 
-    ![image](https://github.com/user-attachments/assets/8569844a-cf57-4a26-917c-183a335c12de)
+#### Visualizing Continuous Data
+  - The continuous features we are analyzing include 'delivery_experience', 'food_quality', and 'delivery_speed'. These features provide insights into customer satisfaction in terms of delivery performance and food quality. 
+  ![image](https://github.com/user-attachments/assets/8569844a-cf57-4a26-917c-183a335c12de)
 
      
 
-      - Visualizing Continuous Features with Box Plots
-        ![image](https://github.com/user-attachments/assets/796875bd-b0b9-4b23-834b-fc78f2237ea6)
+#### Visualizing Continuous Features with Box Plots
+  ![image](https://github.com/user-attachments/assets/796875bd-b0b9-4b23-834b-fc78f2237ea6)
 
-      - Visualizing Continuous Features by Order Accuracy
-        ![image](https://github.com/user-attachments/assets/2e66dfd5-b7cb-41c2-9a85-ab1c0e5eb4c5)
+#### Visualizing Continuous Features by Order Accuracy
+  ![image](https://github.com/user-attachments/assets/2e66dfd5-b7cb-41c2-9a85-ab1c0e5eb4c5)
 
-      - Correlation Heatmap of Customer Satisfaction Variables
-        - A correlation heatmap visually represents the relationships between different numerical features in the dataset. This helps identify which variables are positively or negatively correlated and to what degree.
-        ![image](https://github.com/user-attachments/assets/3661f2e4-ed7b-42d1-b207-cbbe0ac4ec9e)
+#### Correlation Heatmap of Customer Satisfaction Variables
+  - A correlation heatmap visually represents the relationships between different numerical features in the dataset. This helps identify which variables are positively or negatively correlated and to what degree.
+  ![image](https://github.com/user-attachments/assets/3661f2e4-ed7b-42d1-b207-cbbe0ac4ec9e)
 
 ### 4. Building the Model
 - In this section, we will build our Logistic Regression model. This involves preparing the input features and the output variable that the model will learn from.
@@ -746,60 +746,60 @@ dtype: int64
 #### Getting the Inputs and Output
 - To train the model, we need to separate the input features from the output target variable. The input features consist of the numerical ratings for delivery experience, food quality, and delivery speed, while the target variable is the order accuracy
 
-```python
-X = dataset.iloc[:,1:-1].values
-pd.DataFrame(X)
-```
+  ```python
+  X = dataset.iloc[:,1:-1].values
+  pd.DataFrame(X)
+  ```
 
-```python
-y = dataset.iloc[:,-1].values
-pd.DataFrame(y)
-```
+  ```python
+  y = dataset.iloc[:,-1].values
+  pd.DataFrame(y)
+  ```
 
 #### Creating the Training Set and the Test Set
 
 - To evaluate the performance of our Logistic Regression model effectively, we need to split the dataset into training and test sets.
 
-```python
-X_train shape: (8492, 3)
-X_test shape: (2124, 3)
-y_train shape: (8492,)
-y_test shape: (2124,)
-```
+  ```python
+  X_train shape: (8492, 3)
+  X_test shape: (2124, 3)
+  y_train shape: (8492,)
+  y_test shape: (2124,)
+  ```
 
 #### Training the Model
 
 - In this section, we will train our Logistic Regression model on the training dataset. We will also address the class imbalance present in the dataset by setting the `class_weight` parameter to `'balanced'`.
 
-```python
-# Set class_weight to 'balanced' to address class imbalance
-model = LogisticRegression(random_state=0, class_weight='balanced')
+  ```python
+  # Set class_weight to 'balanced' to address class imbalance
+  model = LogisticRegression(random_state=0, class_weight='balanced')
 
-# Train the model on the original X_train_scaled, y_train
-model.fit(X_train, y_train)
-```
+  # Train the model on the original X_train_scaled, y_train
+  model.fit(X_train, y_train)
+  ```
 
 #### Inference
+- Predict `y values` based on the `X_test`.
+  ```python
+  y_pred = model.predict(sc.transform(X_test))
+  pd.DataFrame(y_pred)
+  ```
 
-```python
-y_pred = model.predict(sc.transform(X_test))
-pd.DataFrame(y_pred)
-```
+- This section will demonstrate how to make a single prediction using the trained Logistic Regression model. This example will predict the order accuracy based on provided feature values.
 
--- This section will demonstrate how to make a single prediction using the trained Logistic Regression model. This example will predict the order accuracy based on provided feature values.
+  ```python
+  prediction = model.predict(sc.transform([[5, 5, 5]]))
 
-```python
-prediction = model.predict(sc.transform([[5, 5, 5]]))
+  if prediction[0] == 1:
+      print("Customer's Order is Complete (1)")
+  elif prediction[0] == 0:
+      print("Customer's Order is Incomplete (0)")
+  ```
 
-if prediction[0] == 1:
-    print("Customer's Order is Complete (1)")
-elif prediction[0] == 0:
-    print("Customer's Order is Incomplete (0)")
-```
-
-- Customer's Order is Complete (1)
+- The result shows: `Customer's Order is Complete (1)`
 - The model predicted that the customer's order is complete, with a result of 1.
-  
+
 
 ### 5. Evaluating the model
 
@@ -812,35 +812,38 @@ accuracy = accuracy_score(y_test,y_pred)
 print(f"Accuracy Score: {accuracy:.4f}")
 ```
 
-- Accuracy Score: 0.7194
-- The Logistic Regression model achieved an accuracy score of 0.7194 on the test dataset. This means that the model correctly predicted customer order outcomes approximately 71.94% of the time.
+- **Accuracy Score:** 0.7194
+- The Logistic Regression model achieved an accuracy score of **0.7194** on the test dataset. This means that the model correctly predicted customer order outcomes approximately **71.94%** of the time.
         
 #### Confusion Matrix
 
 - The confusion matrix allows for an insightful breakdown of the model's performance and overall accuracy.
 
-![image](https://github.com/user-attachments/assets/576b3bf1-6601-47f9-b51d-caafa1b46a39)
+  ![image](https://github.com/user-attachments/assets/576b3bf1-6601-47f9-b51d-caafa1b46a39)
 
 #### Summary of Evaluation
+- Using the code we can summarize the evaluation.
 
-```python
-accuracy = accuracy_score(y_test,y_pred)
-print(f"Accuracy Score: {accuracy:.4f}")
+  ```python
+  accuracy = accuracy_score(y_test,y_pred)
+  print(f"Accuracy Score: {accuracy:.4f}")
 
-print("Confusion Matrix:")
-print(cm)
-```
+  print("Confusion Matrix:")
+  print(cm)
+  ```
+- Giving this results
+  ```python
+  Accuracy Score: 0.7194
+  Confusion Matrix:
+  [[  12  553]
+  [  43 1516]]
+  ```
 
-```python
-Accuracy Score: 0.7194
-Confusion Matrix:
-[[  12  553]
- [  43 1516]]
-```
-
-## Results and Discussion
+## Results
 
 ### Car Price Prediction (Linear Regression)
+
+- After building the linear regression model, we are able to predict the Car Price based on the specification given. Given below is the summary of the results.
 
 #### R² Score
 - The *R² score* measures the proportion of variance in the dependent variable that can be explained by the independent variables. It ranges from 0 to 100, where a higher score indicates a better fit.
