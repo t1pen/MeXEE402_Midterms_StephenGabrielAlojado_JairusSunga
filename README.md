@@ -395,7 +395,27 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
   ![image](https://github.com/user-attachments/assets/7f28c90c-9478-46af-ad51-46327943c1f2)
   ![image](https://github.com/user-attachments/assets/b30174c3-18a0-4820-bd3a-1625c18645f0)
 
-  
+ - After visualization of the categorical features here are some of the insights:
+
+ - CompanyName: There is a noticeable difference in mean prices across different car manufacturers, which suggests that CompanyName could be a useful feature, although it may need to be encoded appropriately.
+
+ - doornumber: The difference in mean price between cars with two and four doors is relatively small. This feature may have low predictive power for price.
+
+  - fueltype: There is a noticeable price difference between diesel and gas cars. fueltype could be useful.
+
+  - aspiration: There is a difference in mean price between turbo and standard aspiration, so aspiration could be a useful feature.
+
+  - carbody: Different body styles show distinct mean prices, indicating that carbody may contribute to price prediction.
+
+  - enginelocation: A significant price difference exists between front and rear engine locations. enginelocation might be an important feature.
+
+  - drivewheel: The mean prices vary by drive type (e.g., rwd, fwd, 4wd), so drivewheel could be a useful feature.
+
+  - enginetype: There are noticeable price variations across different engine types, so enginetype might also be a useful predictor.
+
+  - cylindernumber: The mean price varies with the number of cylinders, suggesting cylindernumber could be valuable.
+
+  - fuelsystem: While there is some variation in mean price across different fuel systems, it is relatively minor, indicating fuelsystem might be less significant.
 
 
  
