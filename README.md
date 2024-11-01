@@ -335,6 +335,41 @@ dtype: int64
 
 - To analyze the dataset effectively, we first separate the company name and car model from the `CarName` feature. The company name will be extracted using the following code:
 
+```python
+cars['CompanyName'] = cars['CarName'].apply(lambda x: x.split(" ")[0])
+```
+
+- Once we have the `CompanyName`, we can drop the original `CarName` column in favor of the new feature. We can accomplish this with the following code:
+
+```python
+cars.drop(columns='CarName', inplace=True)
+```
+
+- Fixing Misspelled Company Names
+    -There's need to correct some misspelled company names in the dataset. The entries that require fixing are:
+  
+maxda → mazda
+Nissan → nissan
+porcshce → porsche
+toyouta → toyota
+vokswagen & vw → volkswagen
+
+```python
+cars['CompanyName'].replace({
+    'maxda': 'mazda',
+    'Nissan': 'nissan',
+    'porcshce': 'porsche',
+    'toyouta': 'toyota',
+    'vokswagen': 'volkswagen',
+    'vw': 'volkswagen'
+}, inplace=True)
+```
+```python
+array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
+       'isuzu', 'jaguar', 'mazda', 'buick', 'mercury', 'mitsubishi',
+       'nissan', 'peugeot', 'plymouth', 'porsche', 'renault', 'saab',
+       'subaru', 'toyota', 'volkswagen', 'volvo'], dtype=object)
+```
 
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
