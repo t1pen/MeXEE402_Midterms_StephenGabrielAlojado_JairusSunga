@@ -425,7 +425,9 @@ dataset
 ```
   - After `Renaming`
 
-![image](https://github.com/user-attachments/assets/8c7ab110-c6a5-4e8c-be05-75a35c731a9d)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8c7ab110-c6a5-4e8c-be05-75a35c731a9d" alt="Description of Image" />
+</p>
 
 -In `.info()`, this will explore data types, non-null counts, and memory usage, which gives insight into the structure and quality of the data, identifying any missing or incorrect values that might require preprocessing.
 
