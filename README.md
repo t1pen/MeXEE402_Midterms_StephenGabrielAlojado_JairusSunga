@@ -531,6 +531,75 @@ memory usage: 86.6 KB
 X = cars_final.iloc[:,:-1].values
 pd.DataFrame(X)
 ```
+
+```python
+y = cars_final.iloc[:,-1].values
+pd.DataFrame(y)
+```
+
+#### Train test split
+
+```pythin
+X_train shape: (164, 53)
+X_test shape: (41, 53)
+y_train shape: (164,)
+y_test shape: (41,)
+```
+
+#### Training Linear Regression Model
+
+```python
+lr = LinearRegression()
+lr.fit(X_train, y_train)
+```
+
+#### Inference
+
+- In this section, we will make predictions using our trained Linear Regression model.
+  
+```python
+Predicted Price: 13647.55
+Actual Price: 13495.0
+Difference: [-152.55121761]
+```
+
+### 7. Evaluation of the Model
+- To evaluate the performance of our Linear Regression model, we will compute several key metrics: R² Score, Mean Absolute Error (MAE), Mean Squared Error (MSE), and Root Mean Squared Error (RMSE).
+
+#### R² Score
+- The R² score measures the proportion of variance in the dependent variable that can be explained by the independent variables. It ranges from 0 to 100, where a higher score indicates a better fit.
+  - R² Score: 93.08
+  - This indicates that approximately 93.08% of the variance in car prices is explained by our model.
+
+#### Mean Absolute Error (MAE)
+- MAE measures the average magnitude of the errors in a set of predictions, without considering their direction. It’s calculated as the average over the test sample of the absolute differences between prediction and actual observation.
+    - Mean Absolute Error (MAE): 1,686.60
+    - This means, on average, our model’s predictions are off by approximately 1,686.60.
+ 
+#### Mean Squared Error (MSE)
+- MSE measures the average of the squares of the errors—that is, the average squared difference between the estimated values and the actual value. It penalizes larger errors more than smaller ones.
+    - Mean Squared Error (MSE): 3,926,875.33
+    - This indicates the overall magnitude of the error.
+ 
+#### Root Mean Squared Error (RMSE)
+- RMSE is the square root of the mean of the squared errors and is useful for understanding how far off predictions are from actual values.
+    - Root Mean Squared Error (RMSE): 1,981.63
+    - This means that the average prediction error is about 1,981.63, giving us a sense of the model's accuracy in terms of actual dollar amounts.
+ 
+### Plotting of the Predicted vs. Actual Price
+
+![image](https://github.com/user-attachments/assets/f0a54d15-9e8d-4f47-a065-1b3da09caded)
+
+
+### Summary of Evaluation
+
+```python
+Mean Absolute Error (MAE): 1686.60
+Mean Squared Error (MSE): 3926875.33
+Root Mean Squared Error (RMSE): 1981.63
+R² Score: 93.08
+```
+
  
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
