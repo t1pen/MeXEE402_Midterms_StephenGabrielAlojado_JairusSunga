@@ -898,3 +898,13 @@ The confusion matrix can be interpreted as follows:
 - **Predictive Power:** Linear Regression is valuable for modeling and predicting quantitative data; Logistic Regression is essential for binary classification, though its effectiveness hinges on the strength of the relationship between features and the outcome.
 
 - **General Limitations:** Linear Regression requires a linear relationship between variables and is sensitive to outliers; Logistic Regression needs well-defined predictors and is sensitive to imbalanced data, which can skew results significantly.
+
+## References
+
+- [Car Price Prediction Dataset](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction)
+- [Customer Satisfaction Dataset](https://www.kaggle.com/datasets/ahmedaliraja/customer-satisfaction-10k/data)
+- [Machine Learning Module](https://online.fliphtml5.com/grdgl/qwmz/#p=1)
+
+## Members
+- [Alojado, Stephen Gabriel S.](https://github.com/t1pen)
+- [Sunga, Jairus C.](https://github.com/jairussunga)
