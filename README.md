@@ -678,9 +678,11 @@ dtype: int64
     ![image](https://github.com/user-attachments/assets/f6a7b466-f0e8-4909-9638-e25be2ada36e)
 
   - Visualizing Continuous Data
+     - The continuous features we are analyzing include 'delivery_experience', 'food_quality', and 'delivery_speed'. These features provide insights into customer satisfaction in terms of delivery performance and food quality.
+     - 
     ![image](https://github.com/user-attachments/assets/8569844a-cf57-4a26-917c-183a335c12de)
 
-      - The continuous features we are analyzing include 'delivery_experience', 'food_quality', and 'delivery_speed'. These features provide insights into customer satisfaction in terms of delivery performance and food quality.
+     
 
       - Visualizing Continuous Features with Box Plots
         ![image](https://github.com/user-attachments/assets/796875bd-b0b9-4b23-834b-fc78f2237ea6)
