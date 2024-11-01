@@ -863,6 +863,10 @@ print(f"Accuracy Score: {accuracy:.4f}")
     - **Root Mean Squared Error (RMSE):** 1,981.63
     - This means that the average prediction error is about **1,981.63**, giving us a sense of the model's accuracy in terms of actual dollar amounts.
 
+#### Overall Discussion
+
+- The linear regression model for predicting car prices demonstrates **strong predictive capability** as indicated by the high R² score. However, while the model appears to fit well overall, the MAE and RMSE values highlight that there are **still notable errors** in the predictions that need to be addressed. The presence of a high MSE indicates **potential issues with outliers**, which could be impacting the model’s accuracy and predictive power.
+
 ### Customer Satisfaction (Logistic Regression)
 
 - After building the logistic regression model, we are able to predict whether the order was complete or not based on the ratings given for delivery experience, food quality, and delivery speed. Given below is the summary of the results.
@@ -883,4 +887,14 @@ The confusion matrix can be interpreted as follows:
 - **False Negatives (FN):** *43* - The model incorrectly predicted that 43 orders were inaccurate when they were actually accurate (i.e., predicted "inaccurate," but the actual was "accurate").
 - **True Positives (TP):** *1516* - The model correctly predicted that 1516 orders were inaccurate.
 
-## 
+#### Overall Discussion
+- While the logistic regression model has demonstrated some ability to predict order accuracy, its performance metrics indicate significant room for improvement. The high false positive rate and low accuracy suggest that the **current predictors may not adequately capture the factors influencing order accuracy**. Future efforts should focus on refining the model through better feature selection, potentially using more advanced modeling techniques, and addressing data quality and balance issues. 
+
+## Comparison of Linear Regression and Logistic Regression
+- **Model Fit and Accuracy:** Linear Regression is effective for continuous variable prediction, whereas Logistic Regression is suited for binary outcomes but may struggle with accuracy depending on feature relevance and dataset characteristics.
+
+- **Error Metrics:** Linear Regression typically reports errors such as MAE and RMSE to gauge prediction accuracy; Logistic Regression instead utilizes a confusion matrix to illustrate classification accuracy and errors.
+
+- **Predictive Power:** Linear Regression is valuable for modeling and predicting quantitative data; Logistic Regression is essential for binary classification, though its effectiveness hinges on the strength of the relationship between features and the outcome.
+
+- **General Limitations:** Linear Regression requires a linear relationship between variables and is sensitive to outliers; Logistic Regression needs well-defined predictors and is sensitive to imbalanced data, which can skew results significantly.
