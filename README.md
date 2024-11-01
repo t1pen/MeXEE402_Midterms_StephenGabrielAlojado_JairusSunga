@@ -406,20 +406,22 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
 
 - To gain insights into the relationships between the numerical features and the target variable (price), we will compute the correlation matrix. This matrix reveals how strongly the features correlate with each other and with the target variable, helping us identify which features may have a significant impact on car prices.
   
-  ![image](https://github.com/user-attachments/assets/0b884750-8c26-4462-bc81-a4abd8b73219)
+<p align="center">
+  <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_Corr.png?raw=true" alt="CorrMat">
+</p>
 
 - In this heatmap, the correlation coefficients are displayed, with values ranging from -1 to 1. A value close to 1 indicates a strong positive correlation, meaning that as one variable increases, the other tends to increase as well. Conversely, a value close to -1 indicates a strong negative correlation. Values around 0 suggest little to no linear relationship between the variables.
 
 - After visualizing the continuous features, here are some insights:
 
-  - curbweight (correlation ~0.84): This has a strong positive correlation with price, indicating that heavier cars tend to be more expensive.
-  - enginesize (correlation ~0.87): This feature shows a very strong positive correlation with price, making it an essential predictor.
-  - boreratio (correlation ~0.55): This feature has a moderate positive correlation with price, suggesting that cars with a higher bore ratio
-  - horsepower (correlation ~0.81): Higher horsepower is associated with a higher price, suggesting it is an influential predictor.
-  - carlength (correlation ~0.68): This feature also has a moderate positive correlation with price, suggesting that longer cars are generally more expensive.
-  - carwidth (correlation ~0.76): This feature also has a strong positive correlation with price, suggesting that wider cars are generally more expensive.
-  - wheelbase (correlation ~0.58): Moderate positive correlation, which could still contribute useful information to the model.
-  - citympg and highwaympg (correlations ~-0.7): Both features have a strong negative correlation with price, indicating that cars with higher fuel efficiency tend to be less expensive.
+  - `curbweight` *(correlation ~0.84)*: This has a strong positive correlation with price, indicating that heavier cars tend to be more expensive.
+  - `enginesize` *(correlation ~0.87)*: This feature shows a very strong positive correlation with price, making it an essential predictor.
+  - `boreratio` *(correlation ~0.55)*: This feature has a moderate positive correlation with price, suggesting that cars with a higher bore ratio
+  - `horsepower` *(correlation ~0.81)*: Higher horsepower is associated with a higher price, suggesting it is an influential predictor.
+  - `carlength` *(correlation ~0.68)*: This feature also has a moderate positive correlation with price, suggesting that longer cars are generally more expensive.
+  - `carwidth` *(correlation ~0.76)*: This feature also has a strong positive correlation with price, suggesting that wider cars are generally more expensive.
+  - `wheelbase` *(correlation ~0.58)*: Moderate positive correlation, which could still contribute useful information to the model.
+  - `citympg` and `highwaympg` *(correlations ~-0.7)*: Both features have a strong negative correlation with price, indicating that cars with higher fuel efficiency tend to be less expensive.
   - 
 - After visualization here are the features to be retained for building the model:
 
