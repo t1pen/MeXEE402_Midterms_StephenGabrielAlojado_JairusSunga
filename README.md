@@ -2,6 +2,8 @@
 <p align="center"><b>Midterms for MexEE 402 - Electives 2
 <br> Prepared by: Stephen Gabriel S. Alojado and Jairus C. Sunga</b></p>
 
+
+
 ## Introduction
 
 - **Machine Learning and Regression Analysis**:
@@ -506,46 +508,7 @@ Data columns (total 54 columns):
  8   citympg                  205 non-null    int64  
  9   highwaympg               205 non-null    int64  
  10  CompanyName_alfa-romero  205 non-null    int64  
- 11  CompanyName_audi         205 non-null    int64  
- 12  CompanyName_bmw          205 non-null    int64  
- 13  CompanyName_buick        205 non-null    int64  
- 14  CompanyName_chevrolet    205 non-null    int64  
- 15  CompanyName_dodge        205 non-null    int64  
- 16  CompanyName_honda        205 non-null    int64  
- 17  CompanyName_isuzu        205 non-null    int64  
- 18  CompanyName_jaguar       205 non-null    int64  
- 19  CompanyName_mazda        205 non-null    int64  
- 20  CompanyName_mercury      205 non-null    int64  
- 21  CompanyName_mitsubishi   205 non-null    int64  
- 22  CompanyName_nissan       205 non-null    int64  
- 23  CompanyName_peugeot      205 non-null    int64  
- 24  CompanyName_plymouth     205 non-null    int64  
- 25  CompanyName_porsche      205 non-null    int64  
- 26  CompanyName_renault      205 non-null    int64  
- 27  CompanyName_saab         205 non-null    int64  
- 28  CompanyName_subaru       205 non-null    int64  
- 29  CompanyName_toyota       205 non-null    int64  
- 30  CompanyName_volkswagen   205 non-null    int64  
- 31  CompanyName_volvo        205 non-null    int64  
- 32  fueltype_diesel          205 non-null    int64  
- 33  fueltype_gas             205 non-null    int64  
- 34  aspiration_std           205 non-null    int64  
- 35  aspiration_turbo         205 non-null    int64  
- 36  carbody_convertible      205 non-null    int64  
- 37  carbody_hardtop          205 non-null    int64  
- 38  carbody_hatchback        205 non-null    int64  
- 39  carbody_sedan            205 non-null    int64  
- 40  carbody_wagon            205 non-null    int64  
- 41  enginelocation_front     205 non-null    int64  
- 42  enginelocation_rear      205 non-null    int64  
- 43  drivewheel_4wd           205 non-null    int64  
- 44  drivewheel_fwd           205 non-null    int64  
- 45  drivewheel_rwd           205 non-null    int64  
- 46  enginetype_dohc          205 non-null    int64  
- 47  enginetype_dohcv         205 non-null    int64  
- 48  enginetype_l             205 non-null    int64  
- 49  enginetype_ohc           205 non-null    int64  
- 50  enginetype_ohcf          205 non-null    int64  
+...  
  51  enginetype_ohcv          205 non-null    int64  
  52  enginetype_rotor         205 non-null    int64  
  53  price                    205 non-null    float64
