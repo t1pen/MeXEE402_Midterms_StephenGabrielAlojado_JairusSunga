@@ -463,7 +463,7 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
   - citympg
   - highwaympg
 
-### Feature Engineering
+### 5. Feature Engineering
 - In this section, we will convert categorical data to numerical formats using One-Hot Encoding and Label Encoding. Additionally, we will drop unnecessary features based on the insights derived from the Exploratory Data Analysis (EDA).
 
   - By using this code `cars[con_sig].head()`, we can display the first few rows of the continuous features in the dataset. This allows us to visually inspect the values and understand the distribution and range of features.
@@ -667,6 +667,248 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
   </tbody>
 </table>
 </div>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CompanyName</th>
+      <th>fueltype</th>
+      <th>aspiration</th>
+      <th>carbody</th>
+      <th>enginelocation</th>
+      <th>drivewheel</th>
+      <th>enginetype</th>
+      <th>cylindernumber</th>
+      <th>wheelbase</th>
+      <th>carlength</th>
+      <th>carwidth</th>
+      <th>curbweight</th>
+      <th>enginesize</th>
+      <th>boreratio</th>
+      <th>horsepower</th>
+      <th>citympg</th>
+      <th>highwaympg</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>alfa-romero</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>convertible</td>
+      <td>front</td>
+      <td>rwd</td>
+      <td>dohc</td>
+      <td>four</td>
+      <td>88.6</td>
+      <td>168.8</td>
+      <td>64.1</td>
+      <td>2548</td>
+      <td>130</td>
+      <td>3.47</td>
+      <td>111</td>
+      <td>21</td>
+      <td>27</td>
+      <td>13495.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>alfa-romero</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>convertible</td>
+      <td>front</td>
+      <td>rwd</td>
+      <td>dohc</td>
+      <td>four</td>
+      <td>88.6</td>
+      <td>168.8</td>
+      <td>64.1</td>
+      <td>2548</td>
+      <td>130</td>
+      <td>3.47</td>
+      <td>111</td>
+      <td>21</td>
+      <td>27</td>
+      <td>16500.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>alfa-romero</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>hatchback</td>
+      <td>front</td>
+      <td>rwd</td>
+      <td>ohcv</td>
+      <td>six</td>
+      <td>94.5</td>
+      <td>171.2</td>
+      <td>65.5</td>
+      <td>2823</td>
+      <td>152</td>
+      <td>2.68</td>
+      <td>154</td>
+      <td>19</td>
+      <td>26</td>
+      <td>16500.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>audi</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>sedan</td>
+      <td>front</td>
+      <td>fwd</td>
+      <td>ohc</td>
+      <td>four</td>
+      <td>99.8</td>
+      <td>176.6</td>
+      <td>66.2</td>
+      <td>2337</td>
+      <td>109</td>
+      <td>3.19</td>
+      <td>102</td>
+      <td>24</td>
+      <td>30</td>
+      <td>13950.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>audi</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>sedan</td>
+      <td>front</td>
+      <td>4wd</td>
+      <td>ohc</td>
+      <td>five</td>
+      <td>99.4</td>
+      <td>176.6</td>
+      <td>66.4</td>
+      <td>2824</td>
+      <td>136</td>
+      <td>3.19</td>
+      <td>115</td>
+      <td>18</td>
+      <td>22</td>
+      <td>17450.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+### Categorical Feature Engineering
+
+- Converting cylindernumber from object datatype to numerical.
+  
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CompanyName</th>
+      <th>fueltype</th>
+      <th>aspiration</th>
+      <th>carbody</th>
+      <th>enginelocation</th>
+      <th>drivewheel</th>
+      <th>enginetype</th>
+      <th>cylindernumber</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>alfa-romero</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>convertible</td>
+      <td>front</td>
+      <td>rwd</td>
+      <td>dohc</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>alfa-romero</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>convertible</td>
+      <td>front</td>
+      <td>rwd</td>
+      <td>dohc</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>alfa-romero</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>hatchback</td>
+      <td>front</td>
+      <td>rwd</td>
+      <td>ohcv</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>audi</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>sedan</td>
+      <td>front</td>
+      <td>fwd</td>
+      <td>ohc</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>audi</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>sedan</td>
+      <td>front</td>
+      <td>4wd</td>
+      <td>ohc</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+- 
  
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
