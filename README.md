@@ -275,7 +275,21 @@ print(f"Number of continuous features: {len(continuous)}")
   - Number of categorical features: 11
   - Number of continuous features: 15
 
- 
+ -We can print out the names of the categorical and continuous features identified in the previous step.
+
+ ```python
+ Categorical Features:
+Index(['symboling', 'CarName', 'fueltype', 'aspiration', 'doornumber',
+       'carbody', 'drivewheel', 'enginelocation', 'enginetype',
+       'cylindernumber', 'fuelsystem'],
+      dtype='object')
+
+Continuous Features:
+Index(['car_ID', 'wheelbase', 'carlength', 'carwidth', 'carheight',
+       'curbweight', 'enginesize', 'boreratio', 'stroke', 'compressionratio',
+       'horsepower', 'peakrpm', 'citympg', 'highwaympg', 'price'],
+      dtype='object')
+```
 
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
