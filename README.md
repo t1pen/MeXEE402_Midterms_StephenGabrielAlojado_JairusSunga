@@ -638,3 +638,154 @@ Data columns (total 5 columns):
 dtypes: float64(3), int64(1), object(1)
 ```
 
+
+- Checking for NaN Values in the Dataset
+    - To ensure the integrity of our dataset and the reliability of our logistic regression model, it is important to identify and handle any missing values. The following counts of NaN values for each column in the dataset were obtained:
+
+```python
+Customer                 0
+delivery_experience    418
+food_quality           252
+delivery_speed         239
+Order_Accuracy         660
+dtype: int64
+```
+
+- To maintain the integrity of our dataset and enhance the performance of our logistic regression model, it is important to address the missing values identified in the previous section.
+
+```python
+for col in dataset: 
+    dataset[col] = dataset[col].fillna(dataset[col].median())
+```
+
+- Checking for NaN Values After Filling
+    - After filling the missing values in our dataset, it is important to verify that all NaN values have been successfully handled
+
+```python
+NaN values in dataset after handling:
+ Customer               0
+delivery_experience    0
+food_quality           0
+delivery_speed         0
+Order_Accuracy         0
+dtype: int64
+```
+
+### 3. Data Visualization
+- This is where we visualize our dataset and observe the correlation of our variables using Data Visualization Techniques
+
+  - Visualizing Categorical Data
+    ![image](https://github.com/user-attachments/assets/f6a7b466-f0e8-4909-9638-e25be2ada36e)
+
+  - Visualizing Continuous Data
+    ![image](https://github.com/user-attachments/assets/8569844a-cf57-4a26-917c-183a335c12de)
+
+      - The continuous features we are analyzing include 'delivery_experience', 'food_quality', and 'delivery_speed'. These features provide insights into customer satisfaction in terms of delivery performance and food quality.
+
+      - Visualizing Continuous Features with Box Plots
+        ![image](https://github.com/user-attachments/assets/796875bd-b0b9-4b23-834b-fc78f2237ea6)
+
+      - Visualizing Continuous Features by Order Accuracy
+        ![image](https://github.com/user-attachments/assets/2e66dfd5-b7cb-41c2-9a85-ab1c0e5eb4c5)
+
+      - Correlation Heatmap of Customer Satisfaction Variables
+        - A correlation heatmap visually represents the relationships between different numerical features in the dataset. This helps identify which variables are positively or negatively correlated and to what degree.
+        ![image](https://github.com/user-attachments/assets/3661f2e4-ed7b-42d1-b207-cbbe0ac4ec9e)
+
+### 4. Building the Model
+- In this section, we will build our Logistic Regression model. This involves preparing the input features and the output variable that the model will learn from.
+
+#### Getting the Inputs and Output
+- To train the model, we need to separate the input features from the output target variable. The input features consist of the numerical ratings for delivery experience, food quality, and delivery speed, while the target variable is the order accuracy
+
+```python
+X = dataset.iloc[:,1:-1].values
+pd.DataFrame(X)
+```
+
+```python
+y = dataset.iloc[:,-1].values
+pd.DataFrame(y)
+```
+
+#### Creating the Training Set and the Test Set
+
+- To evaluate the performance of our Logistic Regression model effectively, we need to split the dataset into training and test sets.
+
+```python
+X_train shape: (8492, 3)
+X_test shape: (2124, 3)
+y_train shape: (8492,)
+y_test shape: (2124,)
+```
+
+#### Training the Model
+
+- In this section, we will train our Logistic Regression model on the training dataset. We will also address the class imbalance present in the dataset by setting the `class_weight` parameter to `'balanced'`.
+
+```python
+# Set class_weight to 'balanced' to address class imbalance
+model = LogisticRegression(random_state=0, class_weight='balanced')
+
+# Train the model on the original X_train_scaled, y_train
+model.fit(X_train, y_train)
+```
+
+#### Inference
+
+```python
+y_pred = model.predict(sc.transform(X_test))
+pd.DataFrame(y_pred)
+```
+
+-- This section will demonstrate how to make a single prediction using the trained Logistic Regression model. This example will predict the order accuracy based on provided feature values.
+
+```python
+prediction = model.predict(sc.transform([[5, 5, 5]]))
+
+if prediction[0] == 1:
+    print("Customer's Order is Complete (1)")
+elif prediction[0] == 0:
+    print("Customer's Order is Incomplete (0)")
+```
+
+- Customer's Order is Complete (1)
+- The model predicted that the customer's order is complete, with a result of 1.
+  
+
+### 5. Evaluating the model
+
+- Now we will evaluate our logistic regression model.
+
+#### Accuracy
+
+```python
+accuracy = accuracy_score(y_test,y_pred)
+print(f"Accuracy Score: {accuracy:.4f}")
+```
+
+- Accuracy Score: 0.7194
+- The Logistic Regression model achieved an accuracy score of 0.7194 on the test dataset. This means that the model correctly predicted customer order outcomes approximately 71.94% of the time.
+        
+#### Confusion Matrix
+
+- The confusion matrix allows for an insightful breakdown of the model's performance and overall accuracy.
+
+![image](https://github.com/user-attachments/assets/576b3bf1-6601-47f9-b51d-caafa1b46a39)
+
+#### Summary of Evaluation
+
+```python
+accuracy = accuracy_score(y_test,y_pred)
+print(f"Accuracy Score: {accuracy:.4f}")
+
+print("Confusion Matrix:")
+print(cm)
+```
+
+```python
+Accuracy Score: 0.7194
+Confusion Matrix:
+[[  12  553]
+ [  43 1516]]
+```
