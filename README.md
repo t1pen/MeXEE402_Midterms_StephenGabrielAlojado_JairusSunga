@@ -79,10 +79,14 @@ Whereas,
 </div>
 
 ## Project Objectives
-- This is a pair project for **MexEE 402 - Electives 2**, where we are tasked with analyzing and create a model for two datasets, one for Linear Regression and one for Logistic Regression.
-- In this project, we will be able to execute processes on creating a model for regression analysis such as **understanding the data**, **executing exploratory data analysis**, **data pre-processing**, **creating training and test sets, building a model**, and **finally assess the model through using evaluation metrics.**
-- Present the project and explain the process that was taken to build the model for regression analysis.
-- Interpret the result derived from the regression analysis. 
+
+This pair project for **MexEE 402 - Electives 2** aims:
+
+- To analyze and create a model for two datasets, one for Linear Regression and one for Logistic Regression.
+- To integrate the use of Python Programming along with other libraries in creating and building the model.
+- To execute processes on creating a model for regression analysis such as *understanding the data*, *executing exploratory data analysis*, *data pre-processing*, *creating training and test sets, building a model*, and *finally assess the model through using evaluation metrics.*
+- To present the project and explain the process that was taken to build the model for regression analysis.
+- To interpret the result derived from the regression analysis. 
 
 
 ## About the Dataset
@@ -93,6 +97,8 @@ Whereas,
   <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/car_image.png?raw=true" alt="Car Manufacturing Plant" width="400">
 </p>
 
+#### Description
+
 - This dataset was gathered by a consulting firm to assist Geely Auto, a Chinese automobile company aspiring to enter the US market. The data will help understand factors influencing car prices in America, which may differ from the Chinese market.
   
 - The goal is to identify significant variables that predict the price of cars *(dependent variable)* and understand how these variables impact car pricing. This understanding will aid Geely Auto in designing cars and forming business strategies tailored for the US market.
@@ -101,11 +107,73 @@ Whereas,
   
 - The dataset includes a wide range of car attributes across different types and categories prevalent in the American market, offering insights into the competitive landscape and consumer preferences.
 
+#### Key Features
+
+- **Categorical Data**
+
+  - `symboling` - Its assigned insurance risk rating, A value of +3 indicates that the auto is risky, -3 that it is probably pretty safe.
+
+  - `CarName` - Name of car *(company and model)*
+
+  - `fueltype`- Car fuel type *(gas or diesel)*
+  
+  - `aspiration` - Aspiration used in a car *(std, turbo)*
+  
+  - `doornumber` - Number of doors in a car *(two, four)*		
+  
+  - `carbody`	- type of body of car	*(sedan, hatchback, etc.)*
+  
+  - `drivewheel`	- type of drive wheel	*(fwd, rwd, 4wd)*
+  
+  - `enginelocation` - Location of car engine	*(front, rear)*
+  
+  - `enginetype` - Type of engine *(dohc, ohc, etc.)*
+  
+  - `cylindernumber` - cylinder placed in the car	*(four, three, etc.)*		
+  
+  - `fuelsystem` - Fuel system of car *(mpfi, 2bbl, etc.)* 
+  
+  <br>
+
+- **Continuous Data**
+
+  - `Car_ID` - Unique id of each observation (Interger)		
+  
+  - `wheelbase` - Weelbase of car 		
+  
+  - `carlength` - Length of car 		
+  
+  - `carwidth` - Width of car 		
+  
+  - `carheight`	- height of car 		
+  
+  - `curbweight`- The weight of a car without occupants or baggage. 		
+  
+  - `enginesize` - Size of car engine 		
+
+  - `boreratio` - Boreratio of car 		
+  
+  - `stroke` - Stroke or volume inside the engine 		
+  
+  - `compressionratio` - compression ratio of car 		
+  
+  - `horsepower` - Horsepower 		
+  
+  - `peakrpm` - car peak rpm 		
+  
+  - `citympg` - Mileage in city 		
+  
+  - `highwaympg` - Mileage on highway 		
+  
+  - `price` *(Dependent variable)* - Price of car
+
 ### 2. Customer Satisfaction at a Kashmir Cafe
 
 <p align="center">
   <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/SATISFACTION.png?raw=true" alt="Customer Satisfaction" width="400">
 </p>
+
+#### Description
 
 - The dataset originates from a customer satisfaction survey at Kashmir Cafe, designed to understand and improve customer experiences. It includes detailed ratings for *overall delivery experience*, *food quality*, and *speed of delivery*, along with binary feedback on *order accuracy*.
 
@@ -115,6 +183,18 @@ Whereas,
 
 - It is particularly used for logistic regression analysis to predict order accuracy, aiding in understanding factors that influence whether orders are correctly fulfilled.
 
+#### Key Features
 
+- **Categorical Data**
+
+  - `order accuracy` - completenes of the order (Yes or No)
+
+- **Continuous Data**
+
+  - `delivery experience` - delivery experience rating (Scale of 1 - 5)
+
+  - `food quality` - quality of the food (Scale of 1 - 5)
+  
+  - `delivery speed` - speed of the delivery (Scale of 1 -5)
 
 
