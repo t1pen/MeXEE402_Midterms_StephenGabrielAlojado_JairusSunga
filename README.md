@@ -908,7 +908,526 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
 </table>
 </div>
 
-- 
+- Converting other categorical features to numerical using One Hot Encoding
+
+  <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CompanyName</th>
+      <th>fueltype</th>
+      <th>aspiration</th>
+      <th>carbody</th>
+      <th>enginelocation</th>
+      <th>drivewheel</th>
+      <th>enginetype</th>
+      <th>cylindernumber</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>alfa-romero</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>convertible</td>
+      <td>front</td>
+      <td>rwd</td>
+      <td>dohc</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>alfa-romero</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>convertible</td>
+      <td>front</td>
+      <td>rwd</td>
+      <td>dohc</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>alfa-romero</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>hatchback</td>
+      <td>front</td>
+      <td>rwd</td>
+      <td>ohcv</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>audi</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>sedan</td>
+      <td>front</td>
+      <td>fwd</td>
+      <td>ohc</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>audi</td>
+      <td>gas</td>
+      <td>std</td>
+      <td>sedan</td>
+      <td>front</td>
+      <td>4wd</td>
+      <td>ohc</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+- Moving price to the rightmost column
+  
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cylindernumber</th>
+      <th>wheelbase</th>
+      <th>carlength</th>
+      <th>carwidth</th>
+      <th>curbweight</th>
+      <th>enginesize</th>
+      <th>boreratio</th>
+      <th>horsepower</th>
+      <th>citympg</th>
+      <th>highwaympg</th>
+      <th>CompanyName_alfa-romero</th>
+      <th>CompanyName_audi</th>
+      <th>CompanyName_bmw</th>
+      <th>CompanyName_buick</th>
+      <th>CompanyName_chevrolet</th>
+      <th>CompanyName_dodge</th>
+      <th>CompanyName_honda</th>
+      <th>CompanyName_isuzu</th>
+      <th>CompanyName_jaguar</th>
+      <th>CompanyName_mazda</th>
+      <th>CompanyName_mercury</th>
+      <th>CompanyName_mitsubishi</th>
+      <th>CompanyName_nissan</th>
+      <th>CompanyName_peugeot</th>
+      <th>CompanyName_plymouth</th>
+      <th>CompanyName_porsche</th>
+      <th>CompanyName_renault</th>
+      <th>CompanyName_saab</th>
+      <th>CompanyName_subaru</th>
+      <th>CompanyName_toyota</th>
+      <th>CompanyName_volkswagen</th>
+      <th>CompanyName_volvo</th>
+      <th>fueltype_diesel</th>
+      <th>fueltype_gas</th>
+      <th>aspiration_std</th>
+      <th>aspiration_turbo</th>
+      <th>carbody_convertible</th>
+      <th>carbody_hardtop</th>
+      <th>carbody_hatchback</th>
+      <th>carbody_sedan</th>
+      <th>carbody_wagon</th>
+      <th>enginelocation_front</th>
+      <th>enginelocation_rear</th>
+      <th>drivewheel_4wd</th>
+      <th>drivewheel_fwd</th>
+      <th>drivewheel_rwd</th>
+      <th>enginetype_dohc</th>
+      <th>enginetype_dohcv</th>
+      <th>enginetype_l</th>
+      <th>enginetype_ohc</th>
+      <th>enginetype_ohcf</th>
+      <th>enginetype_ohcv</th>
+      <th>enginetype_rotor</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4</td>
+      <td>88.6</td>
+      <td>168.8</td>
+      <td>64.1</td>
+      <td>2548</td>
+      <td>130</td>
+      <td>3.47</td>
+      <td>111</td>
+      <td>21</td>
+      <td>27</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13495.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>88.6</td>
+      <td>168.8</td>
+      <td>64.1</td>
+      <td>2548</td>
+      <td>130</td>
+      <td>3.47</td>
+      <td>111</td>
+      <td>21</td>
+      <td>27</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>16500.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6</td>
+      <td>94.5</td>
+      <td>171.2</td>
+      <td>65.5</td>
+      <td>2823</td>
+      <td>152</td>
+      <td>2.68</td>
+      <td>154</td>
+      <td>19</td>
+      <td>26</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>16500.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>99.8</td>
+      <td>176.6</td>
+      <td>66.2</td>
+      <td>2337</td>
+      <td>109</td>
+      <td>3.19</td>
+      <td>102</td>
+      <td>24</td>
+      <td>30</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13950.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>99.4</td>
+      <td>176.6</td>
+      <td>66.4</td>
+      <td>2824</td>
+      <td>136</td>
+      <td>3.19</td>
+      <td>115</td>
+      <td>18</td>
+      <td>22</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>17450.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+- Using this code cars_final.info(), we can retrieve a concise summary of the cars_final DataFrame, which includes essential information about the dataset's structure and content.
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 205 entries, 0 to 204
+Data columns (total 54 columns):
+ #   Column                   Non-Null Count  Dtype  
+---  ------                   --------------  -----  
+ 0   cylindernumber           205 non-null    int64  
+ 1   wheelbase                205 non-null    float64
+ 2   carlength                205 non-null    float64
+ 3   carwidth                 205 non-null    float64
+ 4   curbweight               205 non-null    int64  
+ 5   enginesize               205 non-null    int64  
+ 6   boreratio                205 non-null    float64
+ 7   horsepower               205 non-null    int64  
+ 8   citympg                  205 non-null    int64  
+ 9   highwaympg               205 non-null    int64  
+ 10  CompanyName_alfa-romero  205 non-null    int64  
+ 11  CompanyName_audi         205 non-null    int64  
+ 12  CompanyName_bmw          205 non-null    int64  
+ 13  CompanyName_buick        205 non-null    int64  
+ 14  CompanyName_chevrolet    205 non-null    int64  
+ 15  CompanyName_dodge        205 non-null    int64  
+ 16  CompanyName_honda        205 non-null    int64  
+ 17  CompanyName_isuzu        205 non-null    int64  
+ 18  CompanyName_jaguar       205 non-null    int64  
+ 19  CompanyName_mazda        205 non-null    int64  
+ 20  CompanyName_mercury      205 non-null    int64  
+ 21  CompanyName_mitsubishi   205 non-null    int64  
+ 22  CompanyName_nissan       205 non-null    int64  
+ 23  CompanyName_peugeot      205 non-null    int64  
+ 24  CompanyName_plymouth     205 non-null    int64  
+ 25  CompanyName_porsche      205 non-null    int64  
+ 26  CompanyName_renault      205 non-null    int64  
+ 27  CompanyName_saab         205 non-null    int64  
+ 28  CompanyName_subaru       205 non-null    int64  
+ 29  CompanyName_toyota       205 non-null    int64  
+ 30  CompanyName_volkswagen   205 non-null    int64  
+ 31  CompanyName_volvo        205 non-null    int64  
+ 32  fueltype_diesel          205 non-null    int64  
+ 33  fueltype_gas             205 non-null    int64  
+ 34  aspiration_std           205 non-null    int64  
+ 35  aspiration_turbo         205 non-null    int64  
+ 36  carbody_convertible      205 non-null    int64  
+ 37  carbody_hardtop          205 non-null    int64  
+ 38  carbody_hatchback        205 non-null    int64  
+ 39  carbody_sedan            205 non-null    int64  
+ 40  carbody_wagon            205 non-null    int64  
+ 41  enginelocation_front     205 non-null    int64  
+ 42  enginelocation_rear      205 non-null    int64  
+ 43  drivewheel_4wd           205 non-null    int64  
+ 44  drivewheel_fwd           205 non-null    int64  
+ 45  drivewheel_rwd           205 non-null    int64  
+ 46  enginetype_dohc          205 non-null    int64  
+ 47  enginetype_dohcv         205 non-null    int64  
+ 48  enginetype_l             205 non-null    int64  
+ 49  enginetype_ohc           205 non-null    int64  
+ 50  enginetype_ohcf          205 non-null    int64  
+ 51  enginetype_ohcv          205 non-null    int64  
+ 52  enginetype_rotor         205 non-null    int64  
+ 53  price                    205 non-null    float64
+dtypes: float64(5), int64(49)
+memory usage: 86.6 KB
+
  
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
