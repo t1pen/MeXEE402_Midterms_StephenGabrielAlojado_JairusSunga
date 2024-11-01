@@ -132,9 +132,7 @@ This pair project for **MexEE 402 - Electives 2** aims:
   - `cylindernumber` - cylinder placed in the car	*(four, three, etc.)*		
   
   - `fuelsystem` - Fuel system of car *(mpfi, 2bbl, etc.)* 
-  
-  <br>
-
+    
 - **Continuous Data**
 
   - `Car_ID` - Unique id of each observation (Interger)		
