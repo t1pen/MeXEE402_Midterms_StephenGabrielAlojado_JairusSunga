@@ -95,18 +95,21 @@ Whereas,
 
 - This dataset was gathered by a consulting firm to assist Geely Auto, a Chinese automobile company aspiring to enter the US market. The data will help understand factors influencing car prices in America, which may differ from the Chinese market.
   
-- The goal is to identify significant variables that predict the price of cars and understand how these variables impact car pricing. This understanding will aid Geely Auto in designing cars and forming business strategies tailored for the US market.
+- The goal is to identify significant variables that predict the price of cars *(dependent variable)* and understand how these variables impact car pricing. This understanding will aid Geely Auto in designing cars and forming business strategies tailored for the US market.
   
-- By modeling car prices using multiple linear regression analysis based on various independent variables, Geely Auto aims to grasp the pricing dynamics in the new market to effectively compete with US and European car manufacturers.
+- By modeling car prices using *multiple linear regression analysis* based on various independent variables, Geely Auto aims to grasp the pricing dynamics in the new market to effectively compete with US and European car manufacturers.
   
 - The dataset includes a wide range of car attributes across different types and categories prevalent in the American market, offering insights into the competitive landscape and consumer preferences.
 
+### 2. Customer Satisfaction at a Kashmir Cafe
 
-- **About the Datasets**:
-  - **Linear Regression Dataset**: "Car Price Prediction" aims to predict the pricing of cars based on various attributes like make, model, mileage, etc.
-  - **Logistic Regression Dataset**: "Customer Satisfaction" focuses on predicting whether a customer is satisfied or not, based on factors related to service and product quality.
+- The dataset originates from a customer satisfaction survey at Kashmir Cafe, designed to understand and improve customer experiences. It includes detailed ratings for *overall delivery experience*, *food quality*, and *speed of delivery*, along with binary feedback on *order accuracy*.
 
-In this project there are two dataset that will be used which are the Car Price Prediction for Linear Regression and Customer Satisfaction for Logistic Regression. The Car Price Prediction Dataset contains various features related to automobiles, such as engine size, horsepower, fuel type, and other specifications that influence the selling price of a car. The Customer Satisfaction will focus on the feedback of the customers to predict if they are satisfied or dissatisfied. This includes the demographic profile of the customers and the service rating as well as the purchase frequency. This will serve as a predictor for the target variable. With that, logistic regression will be utilized to classify customers into two categories based on their satisfaction level.
+- Each customer is uniquely identified by a Customer ID. The *Overall Delivery Experience*, *Food Quality*, *Speed of Delivery* is rated on a scale from 1 (very dissatisfied) to 5 (very satisfied).
+
+- *Order Accuracy* is recorded as either 'Yes' or 'No,' and is used as the dependent variable for logistic regression to predict the accuracy of orders based on other factors in the dataset.
+
+- It is particularly used for logistic regression analysis to predict order accuracy, aiding in understanding factors that influence whether orders are correctly fulfilled.
 
 
 
