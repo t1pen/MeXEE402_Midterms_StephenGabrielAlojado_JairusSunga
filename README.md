@@ -284,7 +284,7 @@ rows, columns = dataset.shape
 print(f"Number of rows: {rows}")
 print(f"Number of columns: {columns}")
 ```
--In the data there's a lengthy column names and it is not visually appealing with that 'Renaming Dataset Columns" would be great for improved clarity and readability, making the data easier to work with and understand at a glance.
+-In the data there's a lengthy column names and it is not visually appealing with that `Renaming Dataset Columns` would be great for improved clarity and readability, making the data easier to work with and understand at a glance.
 
   - Previous data with lengthy names
 ![image](https://github.com/user-attachments/assets/087c1903-62d5-43fc-a9ea-cf2972e040fa)
@@ -297,7 +297,7 @@ dataset = dataset.rename(columns={'Customer': 'Customer',
        'Was your order accurate? Please respond yes or no.': 'Order_Accuracy'})
 dataset
 ```
-  - After 'Renaming'
+  - After `Renaming`
 
 ![image](https://github.com/user-attachments/assets/8c7ab110-c6a5-4e8c-be05-75a35c731a9d)
 
