@@ -297,9 +297,9 @@ Index(['car_ID', 'wheelbase', 'carlength', 'carwidth', 'carheight',
     ```python
     cars.isnull().sum()
     ```
-  
-      ```python
-      car_ID              0
+
+```python
+car_ID              0
 symboling           0
 CarName             0
 fueltype            0
@@ -329,6 +329,7 @@ dtype: int64
 ```
 
   - The output indicates that there are no missing values in any of the columns
+
 
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
