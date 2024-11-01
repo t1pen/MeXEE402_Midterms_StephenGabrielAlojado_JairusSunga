@@ -262,6 +262,21 @@ dtypes: float64(8), int64(8), object(10)
 cars['symboling'] = cars['symboling'].astype('object')
 ```
 
+- In using the code below we will identify the continuous and categorical features in our dataset.
+
+```python
+categorical = cars.select_dtypes(include=['object']).columns
+continuous = cars.select_dtypes(include=['float64', 'int64']).columns
+
+print(f"Number of categorical features: {len(categorical)}")
+print(f"Number of continuous features: {len(continuous)}")
+```
+- This results to:
+  - Number of categorical features: 11
+  - Number of continuous features: 15
+
+ 
+
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
 
