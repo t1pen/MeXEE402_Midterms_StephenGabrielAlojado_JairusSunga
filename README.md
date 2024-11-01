@@ -589,45 +589,37 @@ Difference: [-152.55121761]
 - This show that we have a small difference from the Actual Price.
 
 ### 7. Evaluation of the Model
-- To evaluate the performance of our Linear Regression model, we will compute several key metrics: R² Score, Mean Absolute Error (MAE), Mean Squared Error (MSE), and Root Mean Squared Error (RMSE).
+- To evaluate the performance of our Linear Regression model, we will compute several key metrics: *R² Score*, *Mean Absolute Error (MAE)*, *Mean Squared Error (MSE)*, and *Root Mean Squared Error (RMSE)*. This is obtained using this code
 
-#### R² Score
-- The *R² score* measures the proportion of variance in the dependent variable that can be explained by the independent variables. It ranges from 0 to 100, where a higher score indicates a better fit.
-  - **R² Score:** 0.9308
-  - This indicates that approximately **93.08%** of the variance in car prices is explained by our model.
+  ```python
+  # Mean Absolute Error
+  mae = mean_absolute_error(y_test, y_pred)
+  print(f"Mean Absolute Error (MAE): {mae:.2f}")
 
-#### Mean Absolute Error (MAE)
-- *MAE* measures the average magnitude of the errors in a set of predictions, without considering their direction. It’s calculated as the average over the test sample of the absolute differences between prediction and actual observation.
-    - **Mean Absolute Error (MAE):** 1,686.60
-    - This means, on average, our model’s predictions are off by approximately **1,686.60**.
- 
-#### Mean Squared Error (MSE)
-- *MSE* measures the average of the squares of the errors—that is, the average squared difference between the estimated values and the actual value. It penalizes larger errors more than smaller ones.
-    - **Mean Squared Error (MSE):** 3,926,875.33
-    - This indicates the overall magnitude of the error.
- 
-#### Root Mean Squared Error (RMSE)
-- *RMSE* is the square root of the mean of the squared errors and is useful for understanding how far off predictions are from actual values.
-    - **Root Mean Squared Error (RMSE):** 1,981.63
-    - This means that the average prediction error is about **1,981.63**, giving us a sense of the model's accuracy in terms of actual dollar amounts.
+  # Mean Squared Error
+  mse = mean_squared_error(y_test, y_pred)
+  print(f"Mean Squared Error (MSE): {mse:.2f}")
+
+  # Root Mean Squared Error
+  rmse = np.sqrt(mse)
+  print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
+
+  # R² Score
+  r2 = r2_score(y_test, y_pred)
+  print(f"R² Score: {r2:.4f}")
+  ```
  
 ### Plotting of the Predicted vs. Actual Price
 
-![image](https://github.com/user-attachments/assets/f0a54d15-9e8d-4f47-a065-1b3da09caded)
+  <p align="center">
+      <img src="https://github.com/t1pen/MeXEE402_Midterms_StephenGabrielAlojado_JairusSunga/blob/main/Images/Cars_ModelScatter.png?raw=true" alt="CorrMat">
+  </p>
 
-
-### Summary of Evaluation
-
-```python
-Mean Absolute Error (MAE): 1686.60
-Mean Squared Error (MSE): 3926875.33
-Root Mean Squared Error (RMSE): 1981.63
-R² Score: 93.08
-```
+- This is the plot of the predicted price versus the actual price. It shows that there are still a difference between the two speciall at the higher prices where there is few entries.
 
  
-# Customer Satisfaction Analysis Logistic Regression Model
-- In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
+## Customer Satisfaction Analysis Logistic Regression Model
+- In this section, we will discuss about the process taken by the pair to analyze, and build a *logistic regression model* for the given dataset for predicting the Order Accuracy *(dependent variable)* based on the variables present in the data set.
 
 ### 1. Importing Required Libraries
 - In this section, we will import the necessary libraries and modules that are essential for performing data analysis, visualization, and building the logistic regression model for our customer satisfaction analysis. These libraries provide the tools needed for data manipulation, statistical modeling, and visual representation of our findings.
@@ -649,7 +641,7 @@ from sklearn.metrics import accuracy_score
 dataset = pd.read_csv('Customer-survey-data.csv')
 dataset.head()
 ```
-Verifying Dataset Dimensions
+#### Verifying Dataset Dimensions
 
 -This step checks the number of rows and columns in the dataset, providing an overview of its size and structure to help gauge the amount of data available for analysis.
 ``` python
@@ -845,3 +837,27 @@ Confusion Matrix:
 [[  12  553]
  [  43 1516]]
 ```
+
+## Results and Discussion
+
+### Car Price Prediction (Linear Regression)
+
+#### R² Score
+- The *R² score* measures the proportion of variance in the dependent variable that can be explained by the independent variables. It ranges from 0 to 100, where a higher score indicates a better fit.
+  - **R² Score:** 0.9308
+  - This indicates that approximately **93.08%** of the variance in car prices is explained by our model.
+
+#### Mean Absolute Error (MAE)
+- *MAE* measures the average magnitude of the errors in a set of predictions, without considering their direction. It’s calculated as the average over the test sample of the absolute differences between prediction and actual observation.
+    - **Mean Absolute Error (MAE):** 1,686.60
+    - This means, on average, our model’s predictions are off by approximately **1,686.60**.
+ 
+#### Mean Squared Error (MSE)
+- *MSE* measures the average of the squares of the errors—that is, the average squared difference between the estimated values and the actual value. It penalizes larger errors more than smaller ones.
+    - **Mean Squared Error (MSE):** 3,926,875.33
+    - This indicates the overall magnitude of the error.
+ 
+#### Root Mean Squared Error (RMSE)
+- *RMSE* is the square root of the mean of the squared errors and is useful for understanding how far off predictions are from actual values.
+    - **Root Mean Squared Error (RMSE):** 1,981.63
+    - This means that the average prediction error is about **1,981.63**, giving us a sense of the model's accuracy in terms of actual dollar amounts.
