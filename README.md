@@ -258,9 +258,9 @@ This pair project for **MexEE 402 - Electives 2** aims:
 
     - After referring to the data dictionary, we determined that the `symboling` feature is a categorical variable. Therefore, we need to convert it from its integer representation to an object type. This allows the model to treat it as a category rather than a numerical value, which is important for proper analysis and interpretation.
       
-  ```python
-  cars['symboling'] = cars['symboling'].astype('object')
-  ```
+    ```python
+    cars['symboling'] = cars['symboling'].astype('object')
+    ```
 
 - In using the code below we will identify the continuous and categorical features in our dataset.
 
@@ -277,19 +277,19 @@ This pair project for **MexEE 402 - Electives 2** aims:
 
  - We can print out the names of the categorical and continuous features identified in the previous step.
 
-  ```python
-  Categorical Features:
-  Index(['symboling', 'CarName', 'fueltype', 'aspiration', 'doornumber',
-        'carbody', 'drivewheel', 'enginelocation', 'enginetype',
-        'cylindernumber', 'fuelsystem'],
-        dtype='object')
+    ```python
+    Categorical Features:
+    Index(['symboling', 'CarName', 'fueltype', 'aspiration', 'doornumber',
+          'carbody', 'drivewheel', 'enginelocation', 'enginetype',
+          'cylindernumber', 'fuelsystem'],
+          dtype='object')
 
-  Continuous Features:
-  Index(['car_ID', 'wheelbase', 'carlength', 'carwidth', 'carheight',
-        'curbweight', 'enginesize', 'boreratio', 'stroke', 'compressionratio',
-        'horsepower', 'peakrpm', 'citympg', 'highwaympg', 'price'],
-        dtype='object')
-  ```
+    Continuous Features:
+    Index(['car_ID', 'wheelbase', 'carlength', 'carwidth', 'carheight',
+          'curbweight', 'enginesize', 'boreratio', 'stroke', 'compressionratio',
+          'horsepower', 'peakrpm', 'citympg', 'highwaympg', 'price'],
+          dtype='object')
+    ```
 
 - Checking for NaN Values in the Dataset
   - Before proceeding with data analysis and model building, it's important to check for any missing values (NaN) in the dataset.
@@ -567,24 +567,24 @@ This pair project for **MexEE 402 - Electives 2** aims:
 
 - In this section, we will make predictions using our trained Linear Regression model.
 
-```python
-data_sample = np.array([[4, 88.6, 168.8, 64.1, 2548, 130, 3.47, 111, 21, 27, 
-                      1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-                      0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 
-                      1, 1, 0, 0, 0, 0, 0, 0]])
-predicted_price = lr.predict(data_sample)
-print(f"Predicted Price: {round(predicted_price[0],2)}")
-price_row_1 = cars_final.iloc[0]['price']
-print(f"Actual Price: {price_row_1}")
-print(f"Difference: {price_row_1 - predicted_price}")
-```
+  ```python
+  data_sample = np.array([[4, 88.6, 168.8, 64.1, 2548, 130, 3.47, 111, 21, 27, 
+                        1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+                        0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 
+                        1, 1, 0, 0, 0, 0, 0, 0]])
+  predicted_price = lr.predict(data_sample)
+  print(f"Predicted Price: {round(predicted_price[0],2)}")
+  price_row_1 = cars_final.iloc[0]['price']
+  print(f"Actual Price: {price_row_1}")
+  print(f"Difference: {price_row_1 - predicted_price}")
+  ```
 - Note that the `data_sample` is from the dataset checking if its has predicted the price of the car base on the data entry that we have set.
 
-```python
-Predicted Price: 13647.55
-Actual Price: 13495.0
-Difference: [-152.55121761]
-```
+  ```python
+  Predicted Price: 13647.55
+  Actual Price: 13495.0
+  Difference: [-152.55121761]
+  ```
 - This show that we have a small difference from the Actual Price.
 
 ### 7. Evaluation of the Model
@@ -623,16 +623,16 @@ Difference: [-152.55121761]
 ### 1. Importing Required Libraries
 - In this section, we will import the necessary libraries and modules that are essential for performing data analysis, visualization, and building the logistic regression model for our customer satisfaction analysis. These libraries provide the tools needed for data manipulation, statistical modeling, and visual representation of our findings.
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import accuracy_score
-```
+  ```python
+  import pandas as pd
+  import matplotlib.pyplot as plt
+  import seaborn as sns
+  from sklearn.model_selection import train_test_split
+  from sklearn.preprocessing import StandardScaler
+  from sklearn.linear_model import LogisticRegression
+  from sklearn.metrics import confusion_matrix
+  from sklearn.metrics import accuracy_score
+  ```
 ### 2. Loading Dataset
 - This process involves importing customer survey data from a CSV file into a DataFrame for subsequent analysis and visualization. This displays the some rows to provide a quick overview of the data.
   
@@ -652,7 +652,7 @@ from sklearn.metrics import accuracy_score
 - In the data there's a lengthy column names and it is not visually appealing with that `Renaming Dataset Columns` would be great for improved clarity and readability, making the data easier to work with and understand at a glance.
 
   - Previous data with lengthy names
-![image](https://github.com/user-attachments/assets/087c1903-62d5-43fc-a9ea-cf2972e040fa)
+  ![image](https://github.com/user-attachments/assets/087c1903-62d5-43fc-a9ea-cf2972e040fa)
 
   ``` python
   dataset = dataset.rename(columns={'Customer': 'Customer',
@@ -721,10 +721,13 @@ from sklearn.metrics import accuracy_score
 - This is where we visualize our dataset and observe the correlation of our variables using Data Visualization Techniques
 
 #### Visualizing Categorical Data
+- This is the count plot for the `Order_Accuracy`.
+
   ![image](https://github.com/user-attachments/assets/f6a7b466-f0e8-4909-9638-e25be2ada36e)
 
 #### Visualizing Continuous Data
-  - The continuous features we are analyzing include 'delivery_experience', 'food_quality', and 'delivery_speed'. These features provide insights into customer satisfaction in terms of delivery performance and food quality. 
+- The continuous features we are analyzing include '`delivery_experience`', '`food_quality`', and '`delivery_speed`'. These features provide insights into customer satisfaction in terms of delivery performance and food quality. 
+  
   ![image](https://github.com/user-attachments/assets/8569844a-cf57-4a26-917c-183a335c12de)
 
 #### Visualizing Continuous Features with Box Plots
@@ -735,7 +738,8 @@ from sklearn.metrics import accuracy_score
 
 #### Correlation Heatmap of Customer Satisfaction Variables
   - A correlation heatmap visually represents the relationships between different numerical features in the dataset. This helps identify which variables are positively or negatively correlated and to what degree.
-  ![image](https://github.com/user-attachments/assets/3661f2e4-ed7b-42d1-b207-cbbe0ac4ec9e)
+
+    ![image](https://github.com/user-attachments/assets/3661f2e4-ed7b-42d1-b207-cbbe0ac4ec9e)
 
 ### 4. Building the Model
 - In this section, we will build our Logistic Regression model. This involves preparing the input features and the output variable that the model will learn from.
