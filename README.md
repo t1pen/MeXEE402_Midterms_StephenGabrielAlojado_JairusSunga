@@ -195,6 +195,63 @@ This pair project for **MexEE 402 - Electives 2** aims:
   
   - `delivery_speed` - speed of the delivery *(Scale of 1 -5)*
 
+## Car Price Prediction Linear Regression Model
+- In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
+
+### 1. Preparing the libraries
+- For use to be able to easily analyze the dataset given, we will be needing various `libraries` for our program. This involves the libraries meant for interfacing the dataset, data visualization, building the model, and evaluation the model. The following code for importing the libraries is shown below.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+```
+- Libraries used was primarily, `pandas`, `seaborn`, `numpy`, and `sklearn`. 
+
+
+### 2. Data Understanding
+- First we need to load our dataset and show the first rows of the dataset using the code below.
+
+``` python
+cars = pd.read_csv('CarPrice_Assignment.csv')
+cars.head()
+```
+- Given the data, it involves various data types describing the specification of the car. With this we still need to understand the given dataset through programming techniques such as `.info()`, `.describe()`, and `.head()`.
+
+- Using `.info()`, we have been given the datatypes of each column and the shape of our dataset.
+
+```python
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 205 entries, 0 to 204
+Data columns (total 26 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   car_ID            205 non-null    int64  
+ 1   symboling         205 non-null    int64  
+ 2   CarName           205 non-null    object 
+ 3   fueltype          205 non-null    object 
+ 4   aspiration        205 non-null    object 
+ 5   doornumber        205 non-null    object 
+ 6   carbody           205 non-null    object 
+ 7   drivewheel        205 non-null    object 
+ 8   enginelocation    205 non-null    object 
+ 9   wheelbase         205 non-null    float64
+ 10  carlength         205 non-null    float64
+...
+ 24  highwaympg        205 non-null    int64  
+ 25  price             205 non-null    float64
+dtypes: float64(8), int64(8), object(10)
+```
+
+- Based on the information above, we have *26 columns* and *205 rows* of data. It is also determined that we have `object` type data (mainly categorical) so we need to process it on the later part.
+
+- For the feature `symboling` it is stated that it is an `int64` datatype. However, it is stated that it is a categorical data so we make it as an `object` type of data (but later on will not be used due to being a weak predictor).
 
 
 
