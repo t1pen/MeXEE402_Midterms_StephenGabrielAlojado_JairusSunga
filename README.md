@@ -36,7 +36,7 @@ Whereas,
 
 #### Figure
 <div align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg" alt="Linear Regression" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg" alt="Linear Regression", width=500 />
     <p><em>Best-fit line minimizes errors between points and the line.</em></p>
 </div>
 
@@ -60,7 +60,7 @@ Whereas,
 
 #### Figure
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt="Logistic Regression">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt="Logistic Regression", width=500>
 </p>
 <p align="center">
   <i>Sigmoid curve maps probabilities between 0 and 1.</i>
