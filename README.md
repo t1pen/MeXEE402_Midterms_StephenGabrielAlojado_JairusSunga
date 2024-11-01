@@ -397,25 +397,72 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
 
  - After visualization of the categorical features here are some of the insights:
 
- - CompanyName: There is a noticeable difference in mean prices across different car manufacturers, which suggests that CompanyName could be a useful feature, although it may need to be encoded appropriately.
+   - CompanyName: There is a noticeable difference in mean prices across different car manufacturers, which suggests that CompanyName could be a useful feature, although it may need to be encoded appropriately.
 
- - doornumber: The difference in mean price between cars with two and four doors is relatively small. This feature may have low predictive power for price.
+   - doornumber: The difference in mean price between cars with two and four doors is relatively small. This feature may have low predictive power for price.
 
-  - fueltype: There is a noticeable price difference between diesel and gas cars. fueltype could be useful.
+    - fueltype: There is a noticeable price difference between diesel and gas cars. fueltype could be useful.
 
-  - aspiration: There is a difference in mean price between turbo and standard aspiration, so aspiration could be a useful feature.
+    - aspiration: There is a difference in mean price between turbo and standard aspiration, so aspiration could be a useful feature.
 
-  - carbody: Different body styles show distinct mean prices, indicating that carbody may contribute to price prediction.
+    - carbody: Different body styles show distinct mean prices, indicating that carbody may contribute to price prediction.
 
-  - enginelocation: A significant price difference exists between front and rear engine locations. enginelocation might be an important feature.
+    - enginelocation: A significant price difference exists between front and rear engine locations. enginelocation might be an important feature.
 
-  - drivewheel: The mean prices vary by drive type (e.g., rwd, fwd, 4wd), so drivewheel could be a useful feature.
+    - drivewheel: The mean prices vary by drive type (e.g., rwd, fwd, 4wd), so drivewheel could be a useful feature.
 
-  - enginetype: There are noticeable price variations across different engine types, so enginetype might also be a useful predictor.
+    - enginetype: There are noticeable price variations across different engine types, so enginetype might also be a useful predictor.
 
-  - cylindernumber: The mean price varies with the number of cylinders, suggesting cylindernumber could be valuable.
+    - cylindernumber: The mean price varies with the number of cylinders, suggesting cylindernumber could be valuable.
 
-  - fuelsystem: While there is some variation in mean price across different fuel systems, it is relatively minor, indicating fuelsystem might be less significant.
+    - fuelsystem: While there is some variation in mean price across different fuel systems, it is relatively minor, indicating fuelsystem might be less significant.
+
+- To understand the relationship between the continuous features and the target variable (price), we can use scatter plots along with regression lines.
+
+![image](https://github.com/user-attachments/assets/de38f18f-d7c3-42c7-b5c5-44f6c6ce4850)
+![image](https://github.com/user-attachments/assets/0d45310c-0cfd-4447-bb5d-f1a56240868a)
+
+- To gain insights into the relationships between the numerical features and the target variable (price), we will compute the correlation matrix. This matrix reveals how strongly the features correlate with each other and with the target variable, helping us identify which features may have a significant impact on car prices.
+  
+  ![image](https://github.com/user-attachments/assets/0b884750-8c26-4462-bc81-a4abd8b73219)
+
+- In this heatmap, the correlation coefficients are displayed, with values ranging from -1 to 1. A value close to 1 indicates a strong positive correlation, meaning that as one variable increases, the other tends to increase as well. Conversely, a value close to -1 indicates a strong negative correlation. Values around 0 suggest little to no linear relationship between the variables.
+
+- After visualizing the continuous features, here are some insights:
+
+  - curbweight (correlation ~0.84): This has a strong positive correlation with price, indicating that heavier cars tend to be more expensive.
+  - enginesize (correlation ~0.87): This feature shows a very strong positive correlation with price, making it an essential predictor.
+  - boreratio (correlation ~0.55): This feature has a moderate positive correlation with price, suggesting that cars with a higher bore ratio
+  - horsepower (correlation ~0.81): Higher horsepower is associated with a higher price, suggesting it is an influential predictor.
+  - carlength (correlation ~0.68): This feature also has a moderate positive correlation with price, suggesting that longer cars are generally more expensive.
+  - carwidth (correlation ~0.76): This feature also has a strong positive correlation with price, suggesting that wider cars are generally more expensive.
+  - wheelbase (correlation ~0.58): Moderate positive correlation, which could still contribute useful information to the model.
+  - citympg and highwaympg (correlations ~-0.7): Both features have a strong negative correlation with price, indicating that cars with higher fuel efficiency tend to be less expensive.
+  - 
+- After visualization here are the features to be retained for building the model:
+
+- Categorical Features
+
+  - CompanyName
+  - fueltype
+  - aspiration
+  - carbody
+  - enginelocation
+  - drivewheel
+  - enginetype
+  - cylindernumber
+  - Continuous Features
+
+  - curbweight
+  - enginesize
+  - boreratio
+  - horsepower
+  - carlength
+  - carwidth
+  - wheelbase
+  - citympg
+  - highwaympg
+
 
 
  
