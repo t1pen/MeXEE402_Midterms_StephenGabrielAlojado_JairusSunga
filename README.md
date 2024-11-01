@@ -347,7 +347,7 @@ cars.drop(columns='CarName', inplace=True)
 
 - Fixing Misspelled Company Names
     -There's need to correct some misspelled company names in the dataset. The entries that require fixing are:
-  
+
 maxda → mazda
 Nissan → nissan
 porcshce → porsche
