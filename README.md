@@ -185,7 +185,7 @@ This pair project for **MexEE 402 - Electives 2** aims:
 
 - **Categorical Data**
 
-  - `order accuracy` - completenes of the order *(Yes or No)*
+  - `order_accuracy` - completenes of the order *(Yes or No)*
 
 - **Continuous Data**
 
