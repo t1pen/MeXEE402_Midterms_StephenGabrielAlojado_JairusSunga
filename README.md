@@ -330,6 +330,11 @@ dtype: int64
 
   - The output indicates that there are no missing values in any of the columns
 
+### 3. Data Cleaning
+- Data cleaning is an essential step to correct errors in our dataset and prepare it for data visualization and exploratory data analysis (EDA). This process ensures that our data is accurate and reliable for the analysis.
+
+- To analyze the dataset effectively, we first separate the company name and car model from the `CarName` feature. The company name will be extracted using the following code:
+
 
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
