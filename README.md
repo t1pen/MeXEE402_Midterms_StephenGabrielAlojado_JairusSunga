@@ -253,6 +253,15 @@ dtypes: float64(8), int64(8), object(10)
 
 - For the feature `symboling` it is stated that it is an `int64` datatype. However, it is stated that it is a categorical data so we make it as an `object` type of data (but later on will not be used due to being a weak predictor).
 
+### 3. Data Preprocessing
+  - Convert "symboling" to Categorical Data
+
+    - After referring to the data dictionary, we determined that the `symboling` feature is a categorical variable. Therefore, we need to convert it from its integer representation to an object type. This allows the model to treat it as a category rather than a numerical value, which is important for proper analysis and interpretation.
+      
+```python
+cars['symboling'] = cars['symboling'].astype('object')
+```
+
 ## Customer Satisfaction Analysis Logistic Regression Model
 - In this section, we will discuss about the process taken by the pair to analyze, and build a linear regression model for the given dataset for predicting the Car Price.
 
