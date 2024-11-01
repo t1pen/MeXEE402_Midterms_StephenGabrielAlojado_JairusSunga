@@ -442,26 +442,25 @@ array(['alfa-romero', 'audi', 'bmw', 'chevrolet', 'dodge', 'honda',
 - After visualization here are the features to be retained for building the model:
 
 - Categorical Features
+  - `CompanyName`
+  - `fueltype`
+  - `aspiration`
+  - `carbody`
+  - `enginelocation`
+  - `drivewheel`
+  - `enginetype`
+  - `cylindernumber`
 
-  - CompanyName
-  - fueltype
-  - aspiration
-  - carbody
-  - enginelocation
-  - drivewheel
-  - enginetype
-  - cylindernumber
-  - Continuous Features
-
-  - curbweight
-  - enginesize
-  - boreratio
-  - horsepower
-  - carlength
-  - carwidth
-  - wheelbase
-  - citympg
-  - highwaympg
+- Continuous Features
+  - `curbweight`
+  - `enginesize`
+  - `boreratio`
+  - `horsepower`
+  - `carlength`
+  - `carwidth`
+  - `wheelbase`
+  - `citympg`
+  - `highwaympg`
 
 ### 5. Feature Engineering
 - In this section, we will convert categorical data to numerical formats using One-Hot Encoding and Label Encoding. Additionally, we will drop unnecessary features based on the insights derived from the Exploratory Data Analysis (EDA).
